@@ -4,6 +4,8 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
+use Hash;
 
 class ClientController extends Controller
 {
@@ -14,7 +16,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('superadmin.client.index');
+        $users = User::all();
+        return view('superadmin.client.index',compact('users'));
     }
 
     /**
@@ -35,7 +38,17 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+         User::create([
+             'username' => $request->username ,
+             'password' => Hash::make($request->password),
+             'email' => $request->email,
+             'alamat' => $request->alamat,
+             'No_Hp' => $request->No_Hp,
+             'status' => $request->status,
+             'is_permission' => $request->is_permission,
+         ]);
+         return redirect('client');
     }
 
     /**
@@ -57,7 +70,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        // return view('superadmin.client.edit');
     }
 
     /**

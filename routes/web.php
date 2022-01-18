@@ -18,9 +18,9 @@ Route::get('/', 'Client\HomeController@index');
 Route::group(["middleware" => ['auth','check-permission']], function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
-    
-    Route::get('client', 'SuperAdmin\ClientController@index')->name('client.index');
-    Route::get('client/creat', 'SuperAdmin\ClientController@create')->name('client.create');
+    Route::Resource('client', 'SuperAdmin\ClientController');
+    // Route::get('client', 'SuperAdmin\ClientController@index')->name('client.index');
+    // Route::get('client/creat', 'SuperAdmin\ClientController@create')->name('client.create');
 
     Route::get('produk','SuperAdmin\ProdukController@index')->name('produk.index');
     Route::get('alat','SuperAdmin\AlatController@index')->name('alat.index');

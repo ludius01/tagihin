@@ -48,31 +48,32 @@
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
                                     <td class="min-w-20px text-center">No</td>
-                                    <td class="min-w-300px text-center">Nama Lengkap</td>
-                                    <td class="min-w-200px text-center">NO HP</td>
                                     <td class="min-w-100px text-center">Username</td>
-                                    <td class="min-w-150px text-center">Password</td>
+                                    <td class="min-w-300px text-center">Email</td>
+                                    <!-- <td class="min-w-150px text-center">Password</td> -->
+                                    <td class="min-w-200px text-center">NO HP</td>
                                     <td class="min-w-100px text-center">Aksi</td>
                                 </tr>
                             </thead>
                             <tbody class="fw-bold text-gray-600" id="myTable">
                                 {{--  begin: Row  --}}
                      
-
+                                @foreach($users as $user)
                                 <tr>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
+                                    <td class=" text-center">{{$loop->iteration}}</td>
+                                    <td class=" text-center">{{$user->username}}</td>
+                                    <td class=" text-center">{{$user->email}}</td>
+                                    <!-- <td class=" text-center">*****************</td> -->
+                                    <td class=" text-center">{{$user->No_Hp}}</td>
                                     {{-- <td class=" text-center"></td> --}}
-                                    <td class=" text-center">*****************</td>
+                                    
                                     <td class="text-center">
                                         <a href=" " target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
                                         <a href="" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
                                 </tr>
-                             
+                             @endforeach
 
                                 {{--  end: Row  --}}
                             </tbody>

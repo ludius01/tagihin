@@ -26,7 +26,7 @@
             <!--begin::Content-->
             <div>
                 <!--begin::Form-->
-                <form id="kt_account_profile_details_form" class="form" action="" method="post">
+                <form id="kt_account_profile_details_form" class="form" action="{{route('client.store')}}" method="post">
                     {{csrf_field()}} 
                     {{ method_field('post') }}
                     <div class="card-body border-top p-9">
@@ -47,27 +47,27 @@
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
                             </div>
                         </div>
                        
                         <div class="row mb-6">
                             <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="nik" class="form-control form-control-lg form-control-solid" placeholder="Nomor Induk Kependudukan" required/>
+                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" placeholder="Nomor Induk Kependudukan" required/>
                             </div>
                         </div>
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
                             </div>
                         </div>
                       
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
                             <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="Status" data-control="select2" data-placeholder="Select an option" required/>
+                                <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih status-- </option>
                                    <option value='1'>bayar</option>
                                    <option value="2"> belum bayar</option>
@@ -77,7 +77,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Akses</label>
                             <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="akses" data-control="select2" data-placeholder="Select an option" required/>
+                                <select class="form-select" name="is_permission" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih akses-- </option>
                                    <option value='1'>Admin</option>
                                    <option value="2"> Client</option>
