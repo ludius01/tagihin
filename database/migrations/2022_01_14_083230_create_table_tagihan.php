@@ -16,9 +16,14 @@ class CreateTableTagihan extends Migration
         Schema::create('table_tagihan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('no_inv_tagihan');
-            $table->string('periode_tahun');
-            $table->string('status');
             $table->integer('id_pelanggan');
+            $table->integer('id_alat');
+            $table->integer('id_paket');
+            $table->string('periode_tahun');
+            $table->string('tgl_tagihan');
+            $table->string('jumlah_bayar');
+            $table->string('status');
+
             $table->timestamps();
         });
     }

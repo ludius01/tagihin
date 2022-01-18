@@ -9,7 +9,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-primary" href="{{route('client.create')}}">Tambah Client</a>
+            <a class="btn btn-primary" href="">Tambah Produk</a>
         </div>
         <div class="card">
             {{--  begin: Card -Header  --}}
@@ -24,7 +24,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari Client" />
+                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari TKS" />
                         </div>      
             </div>
             </div>
@@ -49,7 +49,7 @@
                                 <tr>
                                     <td class="min-w-20px text-center">No</td>
                                     <td class="min-w-300px text-center">Nama Lengkap</td>
-                                    <td class="min-w-200px text-center">NO HP</td>
+                                    <td class="min-w-200px text-center">NIK</td>
                                     <td class="min-w-100px text-center">Username</td>
                                     <td class="min-w-150px text-center">Password</td>
                                     <td class="min-w-100px text-center">Aksi</td>

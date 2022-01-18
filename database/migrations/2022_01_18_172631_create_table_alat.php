@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableProduk extends Migration
+class CreateTableAlat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateTableProduk extends Migration
      */
     public function up()
     {
-        Schema::create('table_produk', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('tipe_bulan');
-            $table->string('username');
-            $table->string('password');
-            $table->string('harga');
-            $table->string('status');
+        Schema::create('table_alat', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_alat');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateTableProduk extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_produk');
+        Schema::dropIfExists('table_alat');
     }
 }

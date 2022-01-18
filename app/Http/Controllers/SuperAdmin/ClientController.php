@@ -70,7 +70,9 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        // return view('superadmin.client.edit');
+        $users = User::find($id);
+        // return $users;
+        return view('superadmin.client.edit',compact('users'));
     }
 
     /**
@@ -82,7 +84,18 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return $request;
+        $user= User::find($id);
+        $user->update([
+             'username' => $request->username ,
+             'email' => $request->email,
+             'alamat' => $request->alamat,
+             'No_Hp' => $request->No_Hp,
+             'status' => $request->status,
+             'is_permission' => $request->is_permission,
+        ]);
+
+        return redirect('client/'.$id.'/edit');
     }
 
     /**
@@ -93,6 +106,8 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        User::destroy($user->id);
+         return redirect('client');
     }
 }
