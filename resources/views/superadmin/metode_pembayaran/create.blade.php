@@ -10,7 +10,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-info" href="{{route('client.index')}}">Kembali</a>
+            <a class="btn btn-info" href="{{route('metode-pembayaran.index')}}">Kembali</a>
         </div>
         <!--begin::Basic info-->
         <div class="card mb-5 mb-xl-10">
@@ -18,7 +18,7 @@
             <div class="card-header border-0">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Tambah Client</h3>
+                    <h3 class="fw-bolder m-0">Tambah Metode Pembayaran</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -26,62 +26,28 @@
             <!--begin::Content-->
             <div>
                 <!--begin::Form-->
-                <form id="kt_account_profile_details_form" class="form" action="" method="post">
+                <form id="kt_account_profile_details_form" class="form" action="{{route('metode-pembayaran.store')}}" method="post">
                     {{csrf_field()}} 
                     {{ method_field('post') }}
                     <div class="card-body border-top p-9">
                       
                         <div class="row mb-6">
-                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Username</label>
+                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Nama Rekening</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="username" class="form-control form-control-lg form-control-solid" placeholder="Username" required/>
+                                <input type="text" name="nama_rekening" class="form-control form-control-lg form-control-solid" placeholder="Nama Rekening" required/>
                             </div>
                         </div>
                       
                         <div class="row mb-6">
-                            <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">Password</label>
+                            <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">No Rekening</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="password" name="password" class="form-control form-control-lg form-control-solid" placeholder="Password" required/>
+                                <input type="number" name="no_rekening" class="form-control form-control-lg form-control-solid" placeholder="No Rekening" required/>
                             </div>
                         </div>
                          <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Deskripsi</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
-                            </div>
-                        </div>
-                       
-                        <div class="row mb-6">
-                            <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
-                            <div class="col-lg-8 fv-row">
-                                <input type="number" name="nik" class="form-control form-control-lg form-control-solid" placeholder="Nomor Induk Kependudukan" required/>
-                            </div>
-                        </div>
-                         <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
-                            <div class="col-lg-8 fv-row">
-                                <input type="text" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
-                            </div>
-                        </div>
-                      
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
-                            <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="Status" data-control="select2" data-placeholder="Select an option" required/>
-                                    <option> --pilih status-- </option>
-                                   <option value='1'>bayar</option>
-                                   <option value="2"> belum bayar</option>
-                                </select>     
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Akses</label>
-                            <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="akses" data-control="select2" data-placeholder="Select an option" required/>
-                                    <option> --pilih akses-- </option>
-                                   <option value='1'>Admin</option>
-                                   <option value="2"> Client</option>
-                                </select>     
+                                 <textarea name="deskripsi" id="" cols="30" rows="4"  class="form-control form-control-lg form-control-solid" required></textarea>
                             </div>
                         </div>
                     <div class="card-footer d-flex justify-content-end py-6 px-9">

@@ -50,23 +50,25 @@
                                     <td class="min-w-20px text-center">No</td>
                                     <td class="min-w-300px text-center">Nama Bank</td>
                                     <td class="min-w-200px text-center">Rekening</td>
+                                    <td class="min-w-200px text-center">Deskripsi</td>
                                     <td class="min-w-100px text-center">Aksi</td>
                                 </tr>
                             </thead>
                             <tbody class="fw-bold text-gray-600" id="myTable">
                                 {{--  begin: Row  --}}
                      
-
+                                @foreach($metods as $metod)
                                 <tr>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
+                                    <td class=" text-center">{{$loop->iteration}}</td>
+                                    <td class=" text-center">{{$metod->nama_rekening}}</td>
+                                    <td class=" text-center">{{$metod->no_rekening}}</td>
+                                    <td class=" text-center">{{$metod->deskripsi}}</td>
                                     <td class="text-center">
-                                        <a href="" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
-                                        <a href="" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
+                                        <a href="{{route('metode-pembayaran.edit',$metod->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
+                                        <a href="{{route('metode_pembayaran.delete',$metod->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
                                 </tr>
-                             
+                             @endforeach
 
                                 {{--  end: Row  --}}
                             </tbody>

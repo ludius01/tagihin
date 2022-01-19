@@ -16,7 +16,7 @@ class TagihanController extends Controller
    
          public function index()
     {            
-        return view('superadmin.client.index');
+        return view('superadmin.laporan_tagihan.index');
     }
     
 
