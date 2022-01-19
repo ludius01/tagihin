@@ -9,7 +9,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-primary" href="">Tambah Client</a>
+            <a class="btn btn-primary" href="{{route('metode-pembayaran.create')}}">Tambah Metode Pembayaran</a>
         </div>
         <div class="card">
             {{--  begin: Card -Header  --}}
@@ -24,7 +24,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari TKS" />
+                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari Metode Pembayaran" />
                         </div>      
             </div>
             </div>
@@ -48,10 +48,8 @@
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
                                     <td class="min-w-20px text-center">No</td>
-                                    <td class="min-w-300px text-center">Nama Lengkap</td>
-                                    <td class="min-w-200px text-center">NIK</td>
-                                    <td class="min-w-100px text-center">Username</td>
-                                    <td class="min-w-150px text-center">Password</td>
+                                    <td class="min-w-300px text-center">Nama Bank</td>
+                                    <td class="min-w-200px text-center">Rekening</td>
                                     <td class="min-w-100px text-center">Aksi</td>
                                 </tr>
                             </thead>
@@ -63,11 +61,7 @@
                                     <td class=" text-center"></td>
                                     <td class=" text-center"></td>
                                     <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    {{-- <td class=" text-center"></td> --}}
-                                    <td class=" text-center">*****************</td>
                                     <td class="text-center">
-                                        <a href=" " target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
                                         <a href="" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>

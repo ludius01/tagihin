@@ -15,7 +15,7 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        return view('superadmin.client.index');
+        return view('superadmin.metode_pembayaran.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class PembayaranController extends Controller
      */
     public function create()
     {
-        //
+        return view('superadmin.metode_pembayaran.create');
     }
 
     /**

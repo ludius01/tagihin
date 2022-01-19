@@ -82,8 +82,10 @@ class AlatController extends Controller
      * @param  \App\Model\Alat  $alat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alat $alat)
+    public function destroy($id)
     {
-        //
+         $Alat = Alat::find($id);
+        Alat::destroy($Alat->id);
+        return redirect('alat'); 
     }
 }

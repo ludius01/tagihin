@@ -79,7 +79,7 @@
 								</a>
 							</div>
 							<div class="menu-item py-3">
-								<a class="menu-link menu-center" href="{{route('pembayaran.index')}}" title="Kelola Metode Pembayaran" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+								<a class="menu-link menu-center" href="{{route('metode-pembayaran.index')}}" title="Kelola Metode Pembayaran" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
 										<i class="bi bi-people-fill fs-2"></i>
 									</span>

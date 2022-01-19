@@ -25,7 +25,9 @@ Route::group(["middleware" => ['auth','check-permission']], function(){
     route::get('/delete-paket/{id}',['as'=>'paket.delete', 'uses' => 'SuperAdmin\PaketController@destroy']);
 
     Route::resource('alat','SuperAdmin\AlatController');
-    Route::get('metode-pembayaran','SuperAdmin\PembayaranController@index')->name('pembayaran.index');
+    route::get('/delete-alat/{id}',['as'=>'alat.delete', 'uses' => 'SuperAdmin\AlatController@destroy']);
+
+    Route::resource('metode-pembayaran','SuperAdmin\PembayaranController');
     Route::get('invoice','SuperAdmin\PembayaranController@index_invoice')->name('invoice.index');
     Route::get('laporan-tagihan','SuperAdmin\TagihanController@index')->name('tagihan.index');
   
