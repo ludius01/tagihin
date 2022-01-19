@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableTagihan extends Migration
+class CreateTagihan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateTableTagihan extends Migration
      */
     public function up()
     {
-        Schema::create('table_tagihan', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('tagihan', function (Blueprint $table) {
+           $table->bigIncrements('id');
             $table->string('no_inv_tagihan');
             $table->integer('id_pelanggan');
             $table->integer('id_alat');
@@ -23,7 +23,6 @@ class CreateTableTagihan extends Migration
             $table->string('tgl_tagihan');
             $table->string('jumlah_bayar');
             $table->string('status');
-
             $table->timestamps();
         });
     }
@@ -35,6 +34,6 @@ class CreateTableTagihan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_tagihan');
+        Schema::dropIfExists('tagihan');
     }
 }

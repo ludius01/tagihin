@@ -20,11 +20,11 @@ Route::group(["middleware" => ['auth','check-permission']], function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::Resource('client', 'SuperAdmin\ClientController');
     route::get('/delete/{id}',['as'=>'client.delete', 'uses' => 'SuperAdmin\ClientController@destroy']);
-    // Route::get('client', 'SuperAdmin\ClientController@index')->name('client.index');
-    // Route::get('client/creat', 'SuperAdmin\ClientController@create')->name('client.create');
+  
+    Route::resource('paket','SuperAdmin\PaketController');
+    route::get('/delete-paket/{id}',['as'=>'paket.delete', 'uses' => 'SuperAdmin\PaketController@destroy']);
 
-    Route::get('produk','SuperAdmin\ProdukController@index')->name('produk.index');
-    Route::get('alat','SuperAdmin\AlatController@index')->name('alat.index');
+    Route::resource('alat','SuperAdmin\AlatController');
     Route::get('metode-pembayaran','SuperAdmin\PembayaranController@index')->name('pembayaran.index');
     Route::get('invoice','SuperAdmin\PembayaranController@index_invoice')->name('invoice.index');
     Route::get('laporan-tagihan','SuperAdmin\TagihanController@index')->name('tagihan.index');

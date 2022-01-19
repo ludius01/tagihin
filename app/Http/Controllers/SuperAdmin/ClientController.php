@@ -108,6 +108,6 @@ class ClientController extends Controller
     {
         $user = User::find($id);
         User::destroy($user->id);
-         return redirect('client');
+        return redirect('client');
     }
 }

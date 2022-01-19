@@ -15,7 +15,8 @@ class AlatController extends Controller
      */
     public function index()
     {
-        return view('superadmin.client.index');
+        $alats = Alat::all();
+        return view('superadmin.alat.index',compact('alats'));
     }
 
     /**
@@ -25,7 +26,7 @@ class AlatController extends Controller
      */
     public function create()
     {
-        //
+       return view('superadmin.alat.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class AlatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         Alat::create($request->all());
+        return redirect('alat');
     }
 
     /**
@@ -58,7 +60,7 @@ class AlatController extends Controller
      */
     public function edit(Alat $alat)
     {
-        //
+        return view('superadmin.alat.edit',compact('alat'));
     }
 
     /**
@@ -70,7 +72,8 @@ class AlatController extends Controller
      */
     public function update(Request $request, Alat $alat)
     {
-        //
+        $alat->update($request->all());
+        return redirect('alat/'.$alat->id.'/edit');
     }
 
     /**

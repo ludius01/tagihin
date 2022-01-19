@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTablePaket extends Migration
+class CreatePaket extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTablePaket extends Migration
      */
     public function up()
     {
-        Schema::create('table_paket', function (Blueprint $table) {
+        Schema::create('paket', function (Blueprint $table) {
             $table->id();
             $table->string('kode_paket');
             $table->string('nama_paket');
@@ -33,6 +33,6 @@ class CreateTablePaket extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_paket');
+        Schema::dropIfExists('paket');
     }
 }

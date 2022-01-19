@@ -1,7 +1,7 @@
 @extends('layouts.superadmin.index')
 
 @section('title')
-    Tambah TKS
+    Ubah Alat
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
             <div class="card-header border-0">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Tambah Client</h3>
+                    <h3 class="fw-bolder m-0">Edit Data Alat</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -26,25 +26,23 @@
             <!--begin::Content-->
             <div>
                 <!--begin::Form-->
-                <form id="kt_account_profile_details_form" class="form" action="{{route('alat.store')}}" method="post">
+                <form id="kt_account_profile_details_form" class="form" action="{{route('alat.update',$alat->id)}}" method="POST">
                     {{csrf_field()}} 
-                    {{ method_field('post') }}
+                    {{ method_field('PUT') }}
                     <div class="card-body border-top p-9">
-                      
                         <div class="row mb-6">
                             <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Nama Alat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="nama_alat" class="form-control form-control-lg form-control-solid" placeholder="Nama Alat" required/>
+                                <input type="text" name="nama_alat" class="form-control form-control-lg form-control-solid" value="{{$alat->nama_alat}}" required/>
                             </div>
                         </div>
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Deskripsi</label>
                             <div class="col-lg-8 fv-row">
-                                 <textarea name="deskripsi" id="" cols="30" rows="4"  class="form-control form-control-lg form-control-solid" required></textarea>
+                                 <textarea name="deskripsi" id="" cols="30" rows="4"  class="form-control form-control-lg form-control-solid" required>{{$alat->deskripsi}}</textarea>
                             </div>
                         </div>
-                      
-                         <div class="card-footer d-flex justify-content-end py-6 px-9">
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>

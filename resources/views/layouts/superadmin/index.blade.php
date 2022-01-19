@@ -3,7 +3,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<title>TKS - @yield('title')</title>
+		<title>Tagihin - @yield('title')</title>
 		{{-- <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" /> --}}
@@ -65,7 +65,7 @@
 								</a>
 							</div>
 							<div class="menu-item py-3">
-								<a class="menu-link menu-center" href="{{route('produk.index')}}" title="Data Produk" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+								<a class="menu-link menu-center" href="{{route('paket.index')}}" title="Data Paket" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
 										<i class="bi bi-people-fill fs-2"></i>
 									</span>

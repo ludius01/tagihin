@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableAlat extends Migration
+class CreateAlat extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateTableAlat extends Migration
      */
     public function up()
     {
-        Schema::create('table_alat', function (Blueprint $table) {
-            $table->id();
+        Schema::create('alat', function (Blueprint $table) {
+           $table->id();
             $table->string('nama_alat');
             $table->string('deskripsi');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateTableAlat extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_alat');
+        Schema::dropIfExists('alat');
     }
 }
