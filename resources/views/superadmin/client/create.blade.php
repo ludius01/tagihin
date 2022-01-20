@@ -47,20 +47,20 @@
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" required/>
                             </div>
                         </div>
                        
                         <div class="row mb-6">
                             <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" placeholder="Nomor Induk Kependudukan" required/>
+                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" placeholder="Nomor Hp" required/>
                             </div>
                         </div>
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" placeholder="Alamat" required/>
                             </div>
                         </div>
                       
@@ -69,7 +69,7 @@
                             <div class="col-lg-8 fv-row">
                                 <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih status-- </option>
-                                   <option value='1'>bayar</option>
+                                   <option value='1'>sudah bayar</option>
                                    <option value="2"> belum bayar</option>
                                 </select>     
                             </div>

@@ -9,7 +9,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-primary" href="">Tambah Client</a>
+            <a class="btn btn-primary" href="{{route('invoice.create')}}">Tambah Invoice</a>
         </div>
         <div class="card">
             {{--  begin: Card -Header  --}}
@@ -47,11 +47,10 @@
                         <table class="table table-row-bordered align-middle gy-4 gs-9">
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
-                                    <td class="min-w-20px text-center">No</td>
-                                    <td class="min-w-300px text-center">Nama Lengkap</td>
-                                    <td class="min-w-200px text-center">NIK</td>
-                                    <td class="min-w-100px text-center">Username</td>
-                                    <td class="min-w-150px text-center">Password</td>
+                                    <td class="min-w-20px text-center">No Invoice</td>
+                                    <td class="min-w-300px text-center">Nama Pelanggan</td>
+                                    <td class="min-w-200px text-center">Jumlah Tagihan</td>
+                                    <td class="min-w-100px text-center">Status</td>
                                     <td class="min-w-100px text-center">Aksi</td>
                                 </tr>
                             </thead>
@@ -64,10 +63,9 @@
                                     <td class=" text-center"></td>
                                     <td class=" text-center"></td>
                                     <td class=" text-center"></td>
-                                    {{-- <td class=" text-center"></td> --}}
-                                    <td class=" text-center">*****************</td>
+                                   
                                     <td class="text-center">
-                                        <a href=" " target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
+                                        <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Detail</button>
                                         <a href="" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
@@ -134,3 +132,28 @@
             });
         });
     </script>
+
+    <div class="modal fade" tabindex="-1" id="kt_modal_1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+
+                <!--begin::Close-->
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="svg-icon svg-icon-2x"></span>
+                </div>
+                <!--end::Close-->
+            </div>
+
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

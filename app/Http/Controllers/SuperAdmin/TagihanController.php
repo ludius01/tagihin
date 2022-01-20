@@ -4,6 +4,9 @@ namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Model\Tagihan;
+use App\Model\Alat;
+use App\User;
+use App\Model\Paket;
 use Illuminate\Http\Request;
 
 class TagihanController extends Controller
@@ -16,7 +19,8 @@ class TagihanController extends Controller
    
          public function index()
     {            
-        return view('superadmin.laporan_tagihan.index');
+       
+        return view('superadmin.invoice.index');
     }
     
 
@@ -27,7 +31,15 @@ class TagihanController extends Controller
      */
     public function create()
     {
-        //
+        $jumlah = Paket::all()->max('id');
+        $tagihan = Tagihan::all()->max('id');
+        $a = $jumlah+ 1;
+        $b = $tagihan + 1;
+        $kode =sprintf("%09s",$b.$a);
+        $alats = Alat::all();
+        $pakets = Paket::all();
+        $pelanggans = User::where('is_permission',2)->get();
+        return view('superadmin.invoice.create',compact('alats','pakets','pelanggans','kode'));
     }
 
     /**

@@ -18,7 +18,7 @@
             <div class="card-header border-0">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Tambah Client</h3>
+                    <h3 class="fw-bolder m-0">Tambah Invoice</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -32,35 +32,62 @@
                     <div class="card-body border-top p-9">
                       
                         <div class="row mb-6">
-                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Username</label>
+                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">No Invoice Tagihan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="username" class="form-control form-control-lg form-control-solid" placeholder="Username" required/>
+                                <input type="text" name="no_inv_tagihan" class="form-control form-control-lg form-control-solid" value="{{$kode}}" readonly required/>
                             </div>
                         </div>
                       
                         <div class="row mb-6">
-                            <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">Password</label>
-                            <div class="col-lg-8 fv-row">
-                                <input type="password" name="password" class="form-control form-control-lg form-control-solid" placeholder="Password" required/>
+                            <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">Tanggal Tagihan</label>
+                            <div class="col-lg-3 fv-row">
+                                <input type="date" name="tgl_tagihan" class="form-control form-control-lg form-control-solid" placeholder="Password" required/>
                             </div>
                         </div>
                          <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Pelanggan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <select class="form-select" name="id_pelanggan" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih Pelanggan-- </option>
+                                    @foreach($pelanggans as $pelanggan)
+                                   <option value='{{$pelanggan->id}}'>{{$pelanggan->username}}</option>
+                                   @endforeach
+                                </select>     
                             </div>
                         </div>
                        
                         <div class="row mb-6">
-                            <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
+                            <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">Alat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="nik" class="form-control form-control-lg form-control-solid" placeholder="Nomor Induk Kependudukan" required/>
+                                <select class="form-select" name="alat" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih alat-- </option>
+                                   @foreach($alats as $alat)
+                                    <option value='{{$alat->id}}'>{{$alat->nama_alat}}</option>
+                                   @endforeach
+                                </select>     
                             </div>
                         </div>
                          <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Paket</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="nama_lengkap" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <select class="form-select" name="paket" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih paket-- </option>
+                                    @foreach($pakets as $paket)
+                                   <option value='{{$paket->id}}'>{{$paket->nama_paket}}</option>
+                                   @endforeach
+                                </select>     
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Jumlah Tagihan</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="number" name="jumlah_tagihan" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Unik Kode</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="unik_kode" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
                             </div>
                         </div>
                       
@@ -74,16 +101,7 @@
                                 </select>     
                             </div>
                         </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Akses</label>
-                            <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="akses" data-control="select2" data-placeholder="Select an option" required/>
-                                    <option> --pilih akses-- </option>
-                                   <option value='1'>Admin</option>
-                                   <option value="2"> Client</option>
-                                </select>     
-                            </div>
-                        </div>
+                        
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

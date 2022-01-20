@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Hash;
+use Auth;
 
 class ClientController extends Controller
 {
@@ -16,6 +17,7 @@ class ClientController extends Controller
      */
     public function index()
     {
+        // return Auth::user()->id;
         $users = User::all();
         return view('superadmin.client.index',compact('users'));
     }
@@ -47,6 +49,7 @@ class ClientController extends Controller
              'No_Hp' => $request->No_Hp,
              'status' => $request->status,
              'is_permission' => $request->is_permission,
+             'up_liner_id' => Auth::user()->id,
          ]);
          return redirect('client');
     }

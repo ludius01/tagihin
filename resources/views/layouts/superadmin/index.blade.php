@@ -58,46 +58,7 @@
 								</a>
 							</div>
 <!--begin::Trigger-->
-<button type="button" class="btn btn-primary"
-    data-kt-menu-trigger="click"
-    data-kt-menu-placement="bottom-start">
-   <i class="bi bi-people-fill fs-2"></i>
-    <!-- <span class="svg-icon svg-icon-5 rotate-180 ms-3 me-0">...</span> -->
-</button>
-<!--end::Trigger-->
 
-<!--begin::Menu-->
-<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px py-4"
-    data-kt-menu="true">
-    <!--begin::Menu item-->
-    <div class="menu-item px-3">
-        <a href="#" class="menu-link px-3">
-            Menu item 1
-        </a>
-    </div>
-    <!--end::Menu item-->
-
-    <!--begin::Menu item-->
-    <div class="menu-item px-3">
-        <a href="#" class="menu-link px-3">
-            Menu item 2
-        </a>
-    </div>
-    <!--end::Menu item-->
-
-    <!--begin::Menu item-->
-    <div class="menu-item px-3">
-        <a href="#" class="menu-link px-3">
-            Menu item 3
-        </a>
-    </div>
-    <!--end::Menu item-->
-
-    <!--begin::Menu item-->
-  
-    <!--end::Menu item-->
-</div>
-<!--end::Menu-->
 							<div class="menu-item py-3">
 								<a class="menu-link menu-center" href="{{route('client.index')}}" title="Data Client" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
