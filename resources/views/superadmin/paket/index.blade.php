@@ -51,6 +51,7 @@
                                     <td class="min-w-300px text-center">Kode Paket</td>
                                     <td class="min-w-200px text-center">Nama Paket</td>
                                     <td class="min-w-100px text-center">Tipe Paket</td>
+                                    <td class="min-w-100px text-center">Status</td>
                                     <td class="min-w-100px text-center">Aksi</td>
                                 </tr>
                             </thead>
@@ -62,7 +63,8 @@
                                     <td class=" text-center">{{$loop->iteration}}</td>
                                     <td class=" text-center">{{$paket->kode_paket}}</td>
                                     <td class=" text-center">{{$paket->nama_paket}}</td>
-                                    <td class=" text-center">{{$paket->tipe_paket}}</td>
+                                    <td class=" text-center">@if($paket->tipe_paket == 1)Harian @elseif($paket->tipe_paket == 2) Mingguan @elseif($paket->tipe_paket == 3) Bulanan @endif</td>
+                                    <td class=" text-center">@if($paket->status == 1) Aktif @elseif($paket->status == 2) Tidak Aktif @endif</td>
                                     <td class="text-center">
                                         <a href="" target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
                                         <a href="{{route('paket.edit',$paket->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>

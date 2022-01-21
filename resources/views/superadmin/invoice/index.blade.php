@@ -24,7 +24,7 @@
                                 </svg>
                             </span>
                             <!--end::Svg Icon-->
-                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari TKS" />
+                            <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari Invoice" />
                         </div>      
             </div>
             </div>
@@ -57,20 +57,20 @@
                             <tbody class="fw-bold text-gray-600" id="myTable">
                                 {{--  begin: Row  --}}
                      
-
+                            @foreach($tagihans as $tagihan)
                                 <tr>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
-                                    <td class=" text-center"></td>
+                                    <td class=" text-center">{{$tagihan->no_inv_tagihan}}</td>
+                                    <td class=" text-center">{{$tagihan->users->username}}</td>
+                                    <td class=" text-center">{{$tagihan->jumlah_bayar}}</td>
+                                    <td class=" text-center">@if($tagihan->status == 1) sudah bayar @elseif ($tagihan->status == 2) belum bayar @endif</td>
                                    
                                     <td class="text-center">
-                                        <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Detail</button>
-                                        <a href="" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
-                                        <a href="" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
+                                        <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$tagihan->id}}">Detail</button>
+                                        <a href="{{route('invoice.edit',$tagihan->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
+                                        <a href="{{route('invoice.delete',$tagihan->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
                                 </tr>
-                             
+                             @endforeach
 
                                 {{--  end: Row  --}}
                             </tbody>
@@ -132,28 +132,28 @@
             });
         });
     </script>
-
-    <div class="modal fade" tabindex="-1" id="kt_modal_1">
+@foreach($pembayarans as $pembayaran)
+  <form id="kt_account_profile_details_form" class="form" action="{{route('invoice_konfirmasi',$pembayaran->tagihan->id)}}" method="get">
+    <div class="modal fade" tabindex="-1" id="kt_modal_1{{$pembayaran->tagihan->id}}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-
-                <!--begin::Close-->
-                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                    <span class="svg-icon svg-icon-2x"></span>
-                </div>
-                <!--end::Close-->
+              <center>  <h5 class="modal-title">Modal title</h5>
             </div>
-
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+              <center> <img src="{{asset('foto/tf.jpeg')}}" alt="" style="width:300px; height:500px;"></center>
+               <p>
+                   <label class="col-lg-4 col-form-label required fw-bold fs-6">No Invoice pembayaran</label> : {{$pembayaran->inv_pembayaran}}
+                  <br> <label class="col-lg-4 col-form-label required fw-bold fs-6">Tanggal Bayar</label> : {{$pembayaran->tgl_bayar}}
+                   <br> <label class="col-lg-4 col-form-label required fw-bold fs-6">Kode Unik</label> : {{$pembayaran->tagihan->kode_unik}}
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary" @if($pembayaran->tagihan->status == 1) disabled @endif >Konfirmasi</button>
             </div>
         </div>
     </div>
 </div>
+    </form>
+@endforeach

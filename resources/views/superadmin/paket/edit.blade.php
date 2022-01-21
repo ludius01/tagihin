@@ -79,6 +79,16 @@
                                  <textarea name="deskripsi" id="" cols="30" rows="4"  class="form-control form-control-lg form-control-solid" required>{{$paket->deskripsi}}</textarea>
                             </div>
                         </div>
+                         <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
+                            <div class="col-lg-8 fv-row">
+                                <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih status-- </option>
+                                   <option value='1' @if($paket->status == 1) selected @endif>Aktif</option>
+                                   <option value="2" @if($paket->status == 2) selected @endif> Tidak Aktif</option>
+                                </select>     
+                            </div>
+                        </div>
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

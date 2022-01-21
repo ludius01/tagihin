@@ -18,7 +18,7 @@ class ClientController extends Controller
     public function index()
     {
         // return Auth::user()->id;
-        $users = User::all();
+        $users = User::where('up_liner_id',Auth::user()->id)->get();
         return view('superadmin.client.index',compact('users'));
     }
 

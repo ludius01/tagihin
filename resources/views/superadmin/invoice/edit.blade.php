@@ -1,7 +1,7 @@
 @extends('layouts.superadmin.index')
 
 @section('title')
-    Tambah TKS
+    Ubah Invoice
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-info" href="{{route('client.index')}}">Kembali</a>
+            <a class="btn btn-info" href="{{route('invoice.index')}}">Kembali</a>
         </div>
         <!--begin::Basic info-->
         <div class="card mb-5 mb-xl-10">
@@ -18,7 +18,7 @@
             <div class="card-header border-0">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Edit Client</h3>
+                    <h3 class="fw-bolder m-0">Ubah Invoice</h3>
                 </div>
                 <!--end::Card title-->
             </div>
@@ -26,35 +26,68 @@
             <!--begin::Content-->
             <div>
                 <!--begin::Form-->
-                <form id="kt_account_profile_details_form" class="form" action="{{route('client.update',$users->id)}}" method="POST">
+                <form id="kt_account_profile_details_form" class="form" action="{{route('invoice.update',$tagihan->id)}}" method="post">
                     {{csrf_field()}} 
                     {{ method_field('PUT') }}
                     <div class="card-body border-top p-9">
                       
                         <div class="row mb-6">
-                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Username</label>
+                            <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">No Invoice Tagihan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="username" class="form-control form-control-lg form-control-solid" value="{{$users->username}}" required/>
+                                <input type="text" name="no_inv_tagihan" class="form-control form-control-lg form-control-solid" value="{{$tagihan->no_inv_tagihan}}" readonly required/>
                             </div>
                         </div>
                       
+                        <div class="row mb-6">
+                            <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">Tanggal Tagihan</label>
+                            <div class="col-lg-3 fv-row">
+                                <input type="date" name="tgl_tagihan" class="form-control form-control-lg form-control-solid" value="{{$tagihan->tgl_tagihan}}" required/>
+                            </div>
+                        </div>
                          <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Email</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Pelanggan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" value="{{$users->email}}" required/>
+                                <select class="form-select" name="id_pelanggan" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih Pelanggan-- </option>
+                                    @foreach($pelanggans as $pelanggan)
+                                   <option value='{{$pelanggan->id}}' @if($pelanggan->id == $tagihan->id_pelanggan) selected @endif  >{{$pelanggan->username}}</option>
+                                   @endforeach
+                                </select>     
                             </div>
                         </div>
                        
                         <div class="row mb-6">
-                            <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
+                            <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">Alat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" value="{{$users->No_Hp}}" required/>
+                                <select class="form-select" name="id_alat" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih alat-- </option>
+                                   @foreach($alats as $alat)
+                                    <option value='{{$alat->id}}'  @if($alat->id == $tagihan->id_alat) selected @endif >{{$alat->nama_alat}}</option>
+                                   @endforeach
+                                </select>     
                             </div>
                         </div>
                          <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Paket</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" value="{{$users->alamat}}" required/>
+                                <select class="form-select" name="id_paket" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih paket-- </option>
+                                    @foreach($pakets as $paket)
+                                   <option value='{{$paket->id}}'  @if($paket->id == $tagihan->id_paket) selected @endif>{{$paket->nama_paket}}</option>
+                                   @endforeach
+                                </select>     
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Jumlah Tagihan</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="number" name="jumlah_bayar" class="form-control form-control-lg form-control-solid" value="{{$tagihan->jumlah_bayar}}" required/>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Unik Kode</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="kode_unik" class="form-control form-control-lg form-control-solid" value="{{$tagihan->kode_unik}}" readonly required/>
                             </div>
                         </div>
                       
@@ -63,22 +96,12 @@
                             <div class="col-lg-8 fv-row">
                                 <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih status-- </option>
-                                    
-                                   <option value='1' @if($users->status == 1) selected @endif >bayar</option>
-                                   <option value="2"  @if($users->status == 2) selected @endif> belum bayar</option>
+                                   <option value='1' @if($tagihan->status == 1) selected @endif>sudah bayar</option>
+                                   <option value="2" @if($tagihan->status == 2) selected @endif> belum bayar</option>
                                 </select>     
                             </div>
                         </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Akses</label>
-                            <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="is_permission" data-control="select2" data-placeholder="Select an option" required/>
-                                    <option> --pilih akses-- </option>
-                                   <option value='1'  @if($users->id_permission == 1) selected @endif>Admin</option>
-                                   <option value="2"  @if($users->is_permission == 2) selected @endif> Client</option>
-                                </select>     
-                            </div>
-                        </div>
+                        
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>

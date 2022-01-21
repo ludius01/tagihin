@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('alamat')->nullable();;
             $table->string('status')->nullable();;
             $table->tinyInteger('is_permission');
+            $table->string('up_liner_id');
             $table->rememberToken();
             $table->timestamps();
         });

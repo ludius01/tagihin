@@ -1,7 +1,7 @@
 @extends('layouts.superadmin.index')
 
 @section('title')
-    Tambah TKS
+    Tambah Invoice
 @endsection
 
 @section('content')
@@ -10,7 +10,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-info" href="{{route('client.index')}}">Kembali</a>
+            <a class="btn btn-info" href="{{route('invoice.index')}}">Kembali</a>
         </div>
         <!--begin::Basic info-->
         <div class="card mb-5 mb-xl-10">
@@ -26,7 +26,7 @@
             <!--begin::Content-->
             <div>
                 <!--begin::Form-->
-                <form id="kt_account_profile_details_form" class="form" action="" method="post">
+                <form id="kt_account_profile_details_form" class="form" action="{{route('invoice.store')}}" method="post">
                     {{csrf_field()}} 
                     {{ method_field('post') }}
                     <div class="card-body border-top p-9">
@@ -59,7 +59,7 @@
                         <div class="row mb-6">
                             <label id="nik" class="col-lg-4 col-form-label required fw-bold fs-6">Alat</label>
                             <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="alat" data-control="select2" data-placeholder="Select an option" required/>
+                                <select class="form-select" name="id_alat" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih alat-- </option>
                                    @foreach($alats as $alat)
                                     <option value='{{$alat->id}}'>{{$alat->nama_alat}}</option>
@@ -70,7 +70,7 @@
                          <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Paket</label>
                             <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="paket" data-control="select2" data-placeholder="Select an option" required/>
+                                <select class="form-select" name="id_paket" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih paket-- </option>
                                     @foreach($pakets as $paket)
                                    <option value='{{$paket->id}}'>{{$paket->nama_paket}}</option>
@@ -81,22 +81,22 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Jumlah Tagihan</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="jumlah_tagihan" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="number" name="jumlah_tagihan" class="form-control form-control-lg form-control-solid" placeholder="Jumlah Tagihan" required/>
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Unik Kode</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="unik_kode" class="form-control form-control-lg form-control-solid" placeholder="Nama Lengkap" required/>
+                                <input type="text" name="kode_unik" class="form-control form-control-lg form-control-solid" value="{{$unik_kode}}" readonly required/>
                             </div>
                         </div>
                       
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
                             <div class="col-lg-8 fv-row">
-                                <select class="form-select" name="Status" data-control="select2" data-placeholder="Select an option" required/>
+                                <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
                                     <option> --pilih status-- </option>
-                                   <option value='1'>bayar</option>
+                                   <option value='1'>sudah bayar</option>
                                    <option value="2"> belum bayar</option>
                                 </select>     
                             </div>

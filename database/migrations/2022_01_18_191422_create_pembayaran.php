@@ -22,6 +22,7 @@ class CreatePembayaran extends Migration
             $table->string('total_tagihan');
             $table->string('bukti_tf');
             $table->string('status');
+            $table->string('id_admin');
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@ class CreateAlat extends Migration
            $table->id();
             $table->string('nama_alat');
             $table->string('deskripsi');
+            $table->string('id_admin');
             $table->timestamps();
         });
     }

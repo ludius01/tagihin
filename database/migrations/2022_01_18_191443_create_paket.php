@@ -22,6 +22,8 @@ class CreatePaket extends Migration
             $table->string('password');
             $table->string('harga');
             $table->string('deskripsi');
+            $table->string('status');
+            $table->string('id_admin');
             $table->timestamps();
         });
     }

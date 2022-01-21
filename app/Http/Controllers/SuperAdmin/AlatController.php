@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Model\Alat;
 use Illuminate\Http\Request;
+use Auth;
 
 class AlatController extends Controller
 {
@@ -15,7 +16,7 @@ class AlatController extends Controller
      */
     public function index()
     {
-        $alats = Alat::all();
+        $alats = Alat::where('id_admin',Auth::user()->id)->get();
         return view('superadmin.alat.index',compact('alats'));
     }
 
@@ -26,6 +27,7 @@ class AlatController extends Controller
      */
     public function create()
     {
+
        return view('superadmin.alat.create');
     }
 

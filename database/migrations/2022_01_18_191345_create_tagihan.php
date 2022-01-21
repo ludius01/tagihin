@@ -24,6 +24,7 @@ class CreateTagihan extends Migration
             $table->string('jumlah_bayar');
             $table->string('kode_unik');
             $table->string('status');
+            $table->string('id_admin');
             $table->timestamps();
         });
     }

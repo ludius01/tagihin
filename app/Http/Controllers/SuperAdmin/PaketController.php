@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Model\Paket;
 use Illuminate\Http\Request;
+use Auth;
 
 class PaketController extends Controller
 {
@@ -15,7 +16,7 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $pakets = Paket::all();
+        $pakets = Paket::where('id_admin',Auth::user()->id)->get();
         return view('superadmin.paket.index',compact('pakets'));
     }
 

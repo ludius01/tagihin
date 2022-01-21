@@ -30,7 +30,7 @@
                     {{csrf_field()}} 
                     {{ method_field('post') }}
                     <div class="card-body border-top p-9">
-                      
+                      <input type="text" name="id_admin" value="{{Auth::user()->id}}" hidden>
                         <div class="row mb-6">
                             <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Nama Rekening</label>
                             <div class="col-lg-8 fv-row">

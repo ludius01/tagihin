@@ -30,7 +30,7 @@
                     {{csrf_field()}} 
                     {{ method_field('post') }}
                     <div class="card-body border-top p-9">
-                      
+                      <input type="text" name="id_admin" value="{{Auth::user()->id}}" hidden>
                         <div class="row mb-6">
                                 <label id="username" class="col-lg-4 col-form-label required fw-bold fs-6">Kode Paket</label>
                                 <div class="col-lg-8 fv-row">
@@ -77,6 +77,16 @@
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Deskripsi</label>
                             <div class="col-lg-8 fv-row">
                                  <textarea name="deskripsi" id="" cols="30" rows="4"  class="form-control form-control-lg form-control-solid" required></textarea>
+                            </div>
+                        </div>
+                         <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Status</label>
+                            <div class="col-lg-8 fv-row">
+                                <select class="form-select" name="status" data-control="select2" data-placeholder="Select an option" required/>
+                                    <option> --pilih status-- </option>
+                                   <option value='1'>Aktif</option>
+                                   <option value="2"> Tidak Aktif</option>
+                                </select>     
                             </div>
                         </div>
                     <div class="card-footer d-flex justify-content-end py-6 px-9">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Model\Metode_pembayaran;
 use Illuminate\Http\Request;
+use Auth;
 
 class MetodePembayaranController extends Controller
 {
@@ -15,7 +16,7 @@ class MetodePembayaranController extends Controller
      */
     public function index()
     {
-        $metods = Metode_pembayaran::all();
+        $metods = Metode_pembayaran::where('id_admin',Auth::user()->id)->get();
          return view('superadmin.metode_pembayaran.index',compact('metods'));
     }
 
