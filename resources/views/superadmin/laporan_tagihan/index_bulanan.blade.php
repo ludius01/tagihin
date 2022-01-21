@@ -11,6 +11,42 @@
         <!-- <div class="mb-5">
             <a class="btn btn-primary" href="">Tambah Client</a>
         </div> -->
+ <div class="card shadow mb-4 border-0">
+                <div class="card-header py-3 form-inline justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Laporan Bulanan</h6>
+                    <!-- <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambahmataujian"> <i class="fas fa-fw fa-plus-square"></i> Tambah Mata Ujian</a> -->
+                </div>
+                <div class="card-body py-5">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Pilih Bulan</label>
+                            <select id="inputState" class="form-control" name="ujian" >
+                            <option selected>Choose...</option>
+                            <option value="1">Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                            <option value="4">April</option>
+                            <option value="5">Mei</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">Agustus</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Pilih Tahun</label>
+                            <select id="inputState" class="form-control" name="semester">
+                            <option selected>Choose...</option>
+                            @foreach($tahun as $y)
+                            <option value="{{$y}}">{{$y}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+                    </div>
+  <input type="submit" class="btn btn-primary btn-block" value="Buat Jadwal">
         <div class="card">
             {{--  begin: Card -Header  --}}
             <div class="card-header card-header-stretch border-bottom border-gray-200">

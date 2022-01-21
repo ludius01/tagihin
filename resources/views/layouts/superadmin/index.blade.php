@@ -96,14 +96,14 @@
 								</a>
 							</div>
 							<div class="menu-item py-3">
-								<a class="menu-link menu-center" href="{{route('tagihan.index')}}" title="Laporan Tagihan Bulanan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+								<a class="menu-link menu-center" href="{{route('cetak.index.bulan')}}" title="Laporan Tagihan Bulanan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
 										<i class="bi bi-file-earmark-pdf fs-2"></i>
 									</span>
 								</a>
 							</div>
 							<div class="menu-item py-3">
-								<a class="menu-link menu-center" href="{{route('tagihan.index')}}" title="Laporan Tagihan Tahunan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+								<a class="menu-link menu-center" href="{{route('cetak.index.tahunan')}}" title="Laporan Tagihan Tahunan" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
 										<i class="bi bi-file-earmark-pdf fs-2"></i>
 									</span>

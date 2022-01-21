@@ -184,9 +184,19 @@ class TagihanController extends Controller
         return redirect('invoice');
     }
 
+        public function index_bulanan(){
 
+            $tagihan = Tagihan::all();
+            foreach($tagihan as $tagih){
+           $a[] = date('Y', strtotime($tagih->tgl_tagihan));
+            }
+            $tahun = array_unique($a);
+            
+            return view('superadmin.laporan_tagihan.index_bulanan',compact('tahun'));
+        }
 
-    //  public function konfir(){
-    //     return 'test';
-    // }
+        public function index_tahunan(){
+
+        }
+
 }
