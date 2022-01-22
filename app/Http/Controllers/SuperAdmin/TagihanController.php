@@ -10,6 +10,7 @@ use App\Model\Paket;
 use App\Model\Pembayaran;
 use Illuminate\Http\Request;
 use Auth;
+use PDF;
 
 class TagihanController extends Controller
 {
@@ -195,8 +196,81 @@ class TagihanController extends Controller
             return view('superadmin.laporan_tagihan.index_bulanan',compact('tahun'));
         }
 
-        public function index_tahunan(){
 
+        public function pilih_bulanan(Request $request){
+            // return $request;
+             $tagihan = Tagihan::all();
+            foreach($tagihan as $tagih){
+            $a[] = date('Y', strtotime($tagih->tgl_tagihan));
+            }
+            $tahun = array_unique($a);
+
+            $alats = Alat::all();
+            $pakets = Paket::all();
+            $pelanggans = User::all();
+            $datas = Tagihan::whereYear('tgl_tagihan',$request->tahun)
+            ->whereMonth('tgl_tagihan',$request->bulan)
+            ->where('id_admin',Auth::user()->id)->get();
+           $bulan = $request->bulan;
+           $th = $request->tahun;
+            
+            return view('superadmin.laporan_tagihan.index_bulanan',compact('tahun','datas','bulan','th','pelanggans','alats','pakets'));
+        }
+
+        public function print($bulan,$th){
+            // return $th;
+            $datas = Tagihan::whereYear('tgl_tagihan',$th)
+            ->whereMonth('tgl_tagihan',$bulan)
+            ->where('id_admin',Auth::user()->id)->get();
+            $alats = Alat::all();
+            $pakets = Paket::all();
+            $pelanggans = User::all();
+            // return $datas;
+
+            $pdf = PDF::loadview('superadmin.laporan_tagihan.print_bulanan',compact('datas','pelanggans','alats','pakets','th','bulan'));
+	        return $pdf->download('laporan-tagihan bulan '.$bulan.' tahun '.$th);
+        }
+
+        public function index_tahunan(){
+             $tagihan = Tagihan::all();
+            foreach($tagihan as $tagih){
+           $a[] = date('Y', strtotime($tagih->tgl_tagihan));
+            }
+            $tahun = array_unique($a);
+            
+            return view('superadmin.laporan_tagihan.index_tahun',compact('tahun'));
+
+        }
+
+         public function pilih_tahunan(Request $request){
+            // return $request;
+             $tagihan = Tagihan::all();
+            foreach($tagihan as $tagih){
+            $a[] = date('Y', strtotime($tagih->tgl_tagihan));
+            }
+            $tahun = array_unique($a);
+
+            $alats = Alat::all();
+            $pakets = Paket::all();
+            $pelanggans = User::all();
+            $datas = Tagihan::whereYear('tgl_tagihan',$request->tahun)
+            ->where('id_admin',Auth::user()->id)->get();
+           $th = $request->tahun;
+            
+            return view('superadmin.laporan_tagihan.index_tahun',compact('tahun','datas','th','pelanggans','alats','pakets'));
+        }
+
+         public function print_tahun($th){
+            // return $th;
+            $datas = Tagihan::whereYear('tgl_tagihan',$th)
+            ->where('id_admin',Auth::user()->id)->get();
+            $alats = Alat::all();
+            $pakets = Paket::all();
+            $pelanggans = User::all();
+            // return $datas;
+
+            $pdf = PDF::loadview('superadmin.laporan_tagihan.print_tahunan',compact('datas','pelanggans','alats','pakets','th'));
+	        return $pdf->download('laporan-tagihan tahun '.$th);
         }
 
 }

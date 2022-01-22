@@ -35,7 +35,14 @@ Route::group(["middleware" => ['auth','check-permission']], function(){
     Route::get('invoice/{id}/konfirmasi','SuperAdmin\TagihanController@konfirmasi')->name('invoice_konfirmasi');
 
     Route::get('laporan-tagihan-bulanan','SuperAdmin\TagihanController@index_bulanan')->name('cetak.index.bulan');
+    Route::POST('pilih-cetak-bulanan','SuperAdmin\TagihanController@pilih_bulanan')->name('pilih_cetak_bulanan');
+    Route::get('print/{bulan}/bulan/{th}','SuperAdmin\TagihanController@print')->name('print');
+    //  Route::get('pilih-cetak-bulanan','SuperAdmin\TagihanController@pilih_bulanan_get')->name('pilih_cetak_bulanan_get');
+    
+    
+
     Route::get('laporan-tagihan-tahunan','SuperAdmin\TagihanController@index_tahunan')->name('cetak.index.tahunan');
- 
+    Route::POST('pilih-cetak-tahunan','SuperAdmin\TagihanController@pilih_tahunan')->name('pilih_cetak_tahunan');
+    Route::get('print/{th}','SuperAdmin\TagihanController@print_tahun')->name('print_tahunan');
 });
 Auth::routes();
