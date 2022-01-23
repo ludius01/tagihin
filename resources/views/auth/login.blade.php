@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head>
-		<title>login TKS</title>
+		<title>login Tagihin</title>
 		{{-- <meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" /> --}}
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -43,7 +43,7 @@ License: For each use you must have a valid license purchased only from above li
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
 					<a href="{{ url("/") }}" class="mb-12">
-						<img alt="Logo" src="{{ asset("assets/media/logos/logo-kemnaker-login.png")}}" style="height: 90px" />
+						<img alt="Logo" src="{{ asset("assets/media/logobiru1.png")}}" style="height: 90px" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
