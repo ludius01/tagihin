@@ -62,7 +62,7 @@
                                     <td class=" text-center">{{$alat->nama_alat}}</td>
                                     <td class=" text-center">{{$alat->deskripsi}}</td>
                                     <td class="text-center">
-                                        <a href=" " target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
+                                        {{-- <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$tagihan->id}}">Detail</button> --}}
                                         <a href="{{route('alat.edit',$alat->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('alat.delete',$alat->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>

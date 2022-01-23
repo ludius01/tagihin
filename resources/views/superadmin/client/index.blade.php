@@ -68,7 +68,7 @@
                                     {{-- <td class=" text-center"></td> --}}
                                     
                                     <td class="text-center">
-                                        <!-- <a href="" target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a> -->
+                                         <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$user->id}}">Detail</button>
                                         <a href="{{route('client.edit',$user->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('client.delete',$user->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
@@ -135,3 +135,34 @@
             });
         });
     </script>
+
+    @foreach($users as $user)
+  
+    <div class="modal fade" tabindex="-1" id="kt_modal_1{{$user->id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <center>  <h5 class="modal-title">Detail Paket</h5>
+            </div>
+            <div class="modal-body">
+             
+               <p>
+                <label class="col-lg-4 col-form-label fw-bold fs-6">ID User</label> : {{$user->id}}
+                  <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Username</label> : {{$user->username}}
+                   <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Email</label> : {{$user->email}}
+                    <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Password</label> : ***********
+                     <br> <label class="col-lg-4 col-form-label fw-bold fs-6">No HP</label> : {{$user->No_Hp}}
+                      <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Alamat</label> : {{$user->alamat}}
+                      
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
+  
+@endforeach
+

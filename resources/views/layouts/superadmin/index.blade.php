@@ -51,7 +51,7 @@
 						<!--begin::Primary menu-->
 						<div id="kt_aside_menu" class="menu menu-column menu-title-gray-600 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold fs-6" data-kt-menu="true">
 							<div class="menu-item py-3">
-								<a class="menu-link menu-center" href="" title="Overview" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+								<a class="menu-link menu-center" href="{{route('home')}}" title="Overview" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
 										<i class="bi bi-house fs-2"></i>
 									</span>
@@ -202,7 +202,7 @@
 												<!--end::Menu separator-->
 												<!--begin::Menu item-->
 												<div class="menu-item px-5 pb-3">
-													<a href="" class="fw-bolder text-dark">Edit Profile</a>
+													<a href="{{ url("superadmin-profile", Auth::user()->id) }}" class="fw-bolder text-dark">Edit Profile</a>
 												</div>
 												<div class="menu-item px-5">
 													<form action="{{ route("logout")}}" method="post">

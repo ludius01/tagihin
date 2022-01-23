@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Model\Tkm;
-use App\Model\Tks;
-use App\Model\Kunjungan;
-use App\Model\Kondisi_tkm;
-use App\Model\Aktiv_absn;
+use Hash;
+use DB;
 
 use Auth;
 class HomeController extends Controller
@@ -31,6 +28,10 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->is_permission == '1') {
+            //   for($bulan=1;$bulan < 13;$bulan++){
+            //         $chartuser     = collect(\DB::SELECT("SELECT sum(jml_pekerja) AS jumlah from kondisi_tkm where month(created_at)='$bulan'"))->first();
+            //         $jumlah_user[] = $chartuser->jumlah;
+            //         }
             return view("superadmin.index");
         }else{
                
@@ -38,4 +39,29 @@ class HomeController extends Controller
         }
       
     }
+
+  public function edit($id)
+    {
+        $user= User::find(Auth::user()->id);
+        return view("superadmin.profile.edit",compact('user'));
+    }
+    public function update(Request $request, $id)
+    {
+        // return $request;
+       
+
+            $profil= User::find(Auth::user()->id);
+
+            $profil->password = Hash::make($request->password);
+            $profil->save();
+
+        return view("superadmin.profile.show",compact('profil'))->with("msg", "Berhasil Di Ubah");
+    }
+    public function show()
+    {
+        $profil = User::find(Auth::user()->id);
+        return view("superadmin.profile.show",compact('profil'));
+    }
+
+
 }

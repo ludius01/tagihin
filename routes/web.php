@@ -44,5 +44,9 @@ Route::group(["middleware" => ['auth','check-permission']], function(){
     Route::get('laporan-tagihan-tahunan','SuperAdmin\TagihanController@index_tahunan')->name('cetak.index.tahunan');
     Route::POST('pilih-cetak-tahunan','SuperAdmin\TagihanController@pilih_tahunan')->name('pilih_cetak_tahunan');
     Route::get('print/{th}','SuperAdmin\TagihanController@print_tahun')->name('print_tahunan');
+
+     Route::get('superadmin-profile/{id}/edit',                   'HomeController@edit')->name('superadmin-profile.edit');
+    Route::post('superadmin-profil/{id}/update',                    'HomeController@update')->name('suprofile.update');
+    Route::get('superadmin-profile/{id}',                   'HomeController@show');
 });
 Auth::routes();

@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('No_Hp')->nullable();;
             $table->string('alamat')->nullable();;
             $table->string('status')->nullable();;
-            $table->tinyInteger('is_permission');
-            $table->string('up_liner_id');
+            $table->tinyInteger('is_permission')->nullable();
+            $table->string('up_liner_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

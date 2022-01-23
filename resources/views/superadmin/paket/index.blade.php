@@ -66,7 +66,7 @@
                                     <td class=" text-center">@if($paket->tipe_paket == 1)Harian @elseif($paket->tipe_paket == 2) Mingguan @elseif($paket->tipe_paket == 3) Bulanan @endif</td>
                                     <td class=" text-center">@if($paket->status == 1) Aktif @elseif($paket->status == 2) Tidak Aktif @endif</td>
                                     <td class="text-center">
-                                        <a href="" target="_blank" class="btn btn-sm btn-primary btn-active-light-primary mx-2">Detail</a>
+                                         <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$paket->id}}">Detail</button>
                                         <a href="{{route('paket.edit',$paket->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('paket.delete',$paket->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
                                     </td>
@@ -133,3 +133,35 @@
             });
         });
     </script>
+    @foreach($pakets as $paket)
+  
+    <div class="modal fade" tabindex="-1" id="kt_modal_1{{$paket->id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <center>  <h5 class="modal-title">Detail Paket</h5>
+            </div>
+            <div class="modal-body">
+             
+               <p>
+                <label class="col-lg-4 col-form-label fw-bold fs-6">ID Paket</label> : {{$paket->id}}
+                  <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Kode Paket</label> : {{$paket->kode_paket}}
+                   <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Nama Paket</label> : {{$paket->nama_paket}}
+                    <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Tipe Paket Paket</label> : @if($paket->tipe_paket == 1)Harian @elseif($paket->tipe_paket == 2) Mingguan @elseif($paket->tipe_paket == 3) Bulanan @endif
+                     <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Username</label> : {{$paket->username}}
+                      <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Password</label> : {{$paket->password}}
+                       <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Harga</label> : {{$paket->harga}}
+                        <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Deskripsi</label> : {{$paket->deskripsi}}
+                         <br> <label class="col-lg-4 col-form-label fw-bold fs-6">Status</label> : @if($paket->status == 1) Aktif @elseif($paket->status == 2) Tidak Aktif @endif
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
+  
+@endforeach
+

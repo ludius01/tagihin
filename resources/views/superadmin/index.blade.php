@@ -96,7 +96,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="fs-6 text-gray-800 text-hover-primary fw-bolder">Jumlah TKS</div>
+                            <div class="fs-6 text-gray-800 text-hover-primary fw-bolder">Jumlah Alat</div>
                         </div>
                     </div>
                     <div class="badge badge-light fw-bold py-4 px-3"></div>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Jumlah TKM</a>
+                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Jumlah Paket</a>
                         </div>
                     </div>
                     <div class="badge badge-light fw-bold py-4 px-3"></div>
@@ -118,93 +118,13 @@
         </div>
     </div>
 
-    <div class="row g-5 g-xl-8 mt-5">
-                {{--  PIE CHART  --}}
-                <div class="col">
-                    <!--begin::Mixed Widget 5-->
-                    <div class="card card-xxl-stretch">
-                        <!--begin::Beader-->
-                        <div class="card-header border-0 py-5">
-                            <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder fs-3 mb-1">RingkasanTKM</span>
-                            </h3>
-                        </div>
-                        <!--end::Header-->
-
-                        <!--begin::Body-->
-                        <div class="card-body d-flex flex-row justify-content-around">
-                            <!--begin::Chart-->
-                            <div>
-                                <canvas class="mx-auto" id="pie-tkm" style="width:100%; height:200px"></canvas>
-                            </div>
-                            <!--end::Chart-->
-                            <!--begin::Items-->
-                            <div class="mt-5">
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack mb-5">
-                                    <!--begin::Section-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <div class="symbol symbol-50px me-3">
-                                            <div class="symbol-label bg-light">
-                                                <i class="bi bi-people-fill"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p class="fs-6 text-gray-800 text-hover-primary fw-bolder">Jumlah TKM :
-                                                <span class="fw-bold"></span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack mb-5">
-                                    <!--begin::Section-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <div>
-                                            <p href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Keterangan :</p>
-                                            <div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia 18-25 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia 25-30 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia 30-35 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia 35-40 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia 40-45 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                                <div class="d-flex align-items-center me-2 justify-content-beetwen">
-                                                    <p>Usia > 45 Tahun : <span class="fw-bold"></span></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end::Title-->
-                                    </div>
-                                </div>
-
-                                <!--end::Item-->
-                            </div>
-                            <!--end::Items-->
-                        </div>
-                        <!--end::Body-->
-                    </div>
-                    <!--end::Mixed Widget 5-->
-                </div>
-                <!--end::Col-->
-    </div>
 </div>
 @endsection
 
 @section('script')
     <script>
         let xLine = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
-        var jumlah_user =  ;
+        var jumlah_user = ['12','9','3','2','4','2','9','0','6','7','5','2'] ;
 
         new Chart("tk-line", {
         type: "line",
@@ -228,32 +148,5 @@
 
 
 
-        let xValues = ["18-25 Tahun", "25-30 Tahun", "30-35 Tahun", "35-40 Tahun", "40-45 Tahun", "> 45 Tahun"];
-        let yValues = [];
-        let barColors = [
-        "#fa6b64",
-        "#fcc06d",
-        "#77fcac",
-        "#759cff",
-        "#8461ff",
-        "#d0cfd1",
-        ];
-
-        new Chart("pie-tkm", {
-        type: "pie",
-        data: {
-            labels: "Tenaga Kerja",
-            datasets: [{
-            backgroundColor: barColors,
-            data: yValues
-            }]
-        },
-        options: {
-            title: {
-            display: true,
-            text: "Ringkasan TKM"
-            }
-        }
-        });
     </script>
 @endsection
