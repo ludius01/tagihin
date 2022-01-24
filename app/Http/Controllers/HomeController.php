@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use Hash;
 use DB;
+use App\Model\Alat;
+use App\Model\Paket;
+
 
 use Auth;
 class HomeController extends Controller
@@ -28,11 +31,14 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->is_permission == '1') {
-            //   for($bulan=1;$bulan < 13;$bulan++){
-            //         $chartuser     = collect(\DB::SELECT("SELECT sum(jml_pekerja) AS jumlah from kondisi_tkm where month(created_at)='$bulan'"))->first();
-            //         $jumlah_user[] = $chartuser->jumlah;
-            //         }
-            return view("superadmin.index");
+              for($bulan=1;$bulan < 13;$bulan++){
+                    $chartuser     = User::where('up_liner_id',Auth::user()->id)->whereMonth('created_at',$bulan)->count();;
+                    $jumlah_user[] = $chartuser;
+                    }
+                $client = User::where('up_liner_id',Auth::user()->id)->count();
+                $alat = Alat::where('id_admin',Auth::user()->id)->count();
+                $paket = Paket::where('id_admin',Auth::user()->id)->count();
+            return view("superadmin.index",compact('alat','paket','jumlah_user','client'));
         }else{
                
                 return view('home');

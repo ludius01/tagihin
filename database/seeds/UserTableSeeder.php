@@ -18,7 +18,8 @@ class UserTableSeeder extends Seeder
             'username' => 'admin',             
             'email' => 'admin@gmail.com',             
             'password' => Hash::make('admin@gmail.com'),
-             'is_permission'=> '1'
+             'is_permission'=> '1',
+             'up_liner_id' =>'1'
           ]); 
          
  

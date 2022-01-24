@@ -173,7 +173,7 @@
 										<!--begin::User-->
 										<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 											<!--begin::Menu wrapper-->
-											<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+											<div class="cursor-pointer symbol symbol-10px symbol-md-20px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 												<img src="{{ asset("assets/media/logobiru1.png")}}" alt="user" />
 											</div>
 											<!--begin::Menu-->
