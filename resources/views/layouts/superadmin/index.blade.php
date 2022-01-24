@@ -87,7 +87,6 @@
 									</span>
 								</a>
 							</div>
-		</div>
 							<div class="menu-item py-3">
 								<a class="menu-link menu-center" href="{{route('invoice.index')}}" title="Invoice Pembayaran" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
 									<span class="menu-icon me-0">
