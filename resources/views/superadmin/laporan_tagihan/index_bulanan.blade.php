@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-body py-5">
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputState">Pilih Bulan</label>
                             <select id="inputState" class="form-control" name="bulan" >
                             <option selected>Choose...</option>
@@ -38,7 +38,7 @@
                             <option value="12">Desember</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="inputState">Pilih Tahun</label>
                             <select id="inputState" class="form-control" name="tahun">
                             <option selected>Choose...</option>
@@ -48,19 +48,17 @@
                             </select>
                         </div>
                     </div>
-  <input type="submit" class="btn btn-primary btn-block" value="Lihat Laporan">
-  
+        <div class="" style="display:flex; height:40px; margin-bottom:10px; justify-content:center;">
+            <input style="width: 400px; margin-left: 15px;" type="submit" class="btn btn-primary btn-block" value="Lihat Laporan">
 </form>
-
 <!-- <button class="btn btn-primary btn-block"> Lihat Laporan</button> -->
-
-@if(isset($datas))
-<input type="hidden" value="{{$bulan}}" name="bulan">
-<input type="hidden" value="{{$th}}" name="th">
-<form action="{{route('print',[$bulan,$th])}}" method="get">
-  <input type="submit" class="btn btn-primary btn-block" value="Print Laporan">
-</form>
-
+            @if(isset($datas))
+            <input type="hidden" value="{{$bulan}}" name="bulan">
+            <input type="hidden" value="{{$th}}" name="th">
+            <form action="{{route('print',[$bulan,$th])}}" method="get">
+            <input style="width: 400px; margin-left: 15px;" type="submit" class="btn btn-primary btn-block" value="Print Laporan">
+            </form>
+        </div>
         <div class="card">
             {{--  begin: Card -Header  --}}
             <div class="card-header card-header-stretch border-bottom border-gray-200">
@@ -75,10 +73,10 @@
                             </span> -->
                             <!--end::Svg Icon-->
                             <!-- <input type="text" data-kt-customer-table-filter="search" id="myInput" class="form-control form-control-solid w-250px ps-15" placeholder="Cari TKS" /> -->
-                        </div>      
+                        </div>
             </div>
             </div>
-            
+
             {{--  end: Card Header  --}}
 
             {{--  begin: Content  --}}
@@ -91,9 +89,9 @@
                             {{$message}}
                         </div>
                     @endif
-                    
+
                     <div class="table-responsive">
-                        
+
                         <table class="table table-row-bordered align-middle gy-4 gs-9">
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
@@ -109,11 +107,11 @@
                             </thead>
                             <tbody class="fw-bold text-gray-600" id="myTable">
                                 {{--  begin: Row  --}}
-                     
+
                                 @foreach($datas as $data)
                                 <tr>
                                     <td class=" text-center">{{$data->tgl_tagihan}}</td>
-                                    <td class=" text-center">{{$data->no_inv_tagihan}}</td>      
+                                    <td class=" text-center">{{$data->no_inv_tagihan}}</td>
                                     <td class=" text-center">@foreach($pelanggans as $p)@if($p->id == $data->id_pelanggan){{$p->username}}@endif    @endforeach</td>
                                     <td class=" text-center">@foreach($alats as $a) @if($a->id == $data->id_alat){{$a->nama_alat}}@endif    @endforeach</td>
                                     <td class=" text-center">@foreach($pakets as $pa)@if($pa->id == $data->id_paket){{$pa->nama_paket}}@endif @endforeach</td>
@@ -136,7 +134,7 @@
         <div class="d-flex flex-stack flex-wrap pt-10">
             <!--begin::Pages-->
             <ul class="pagination">
-                
+
             </ul>
             <!--end::Pages-->
         </div>
@@ -156,7 +154,7 @@
 </script>
 
     @endif
-    
+
     <script type="text/javascript">
         $('#delete-confirm').on('click', function (event) {
             event.preventDefault();
@@ -171,7 +169,7 @@
                 cancelButtonText: 'Batal',
                 confirmButtonText: 'Hapus',
                 reverseButtons: true
-    
+
             }).then((res) => {
                 if (res.value) {
                     console.log('confirmed');
@@ -185,4 +183,4 @@
             });
         });
     </script>
-   
+
