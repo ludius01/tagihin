@@ -186,7 +186,6 @@ class TagihanController extends Controller
     }
 
         public function index_bulanan(){
-
             $tagihan = Tagihan::all();
             foreach($tagihan as $tagih){
            $a[] = date('Y', strtotime($tagih->tgl_tagihan));
@@ -204,7 +203,6 @@ class TagihanController extends Controller
             $a[] = date('Y', strtotime($tagih->tgl_tagihan));
             }
             $tahun = array_unique($a);
-
             $alats = Alat::all();
             $pakets = Paket::all();
             $pelanggans = User::all();
@@ -226,7 +224,6 @@ class TagihanController extends Controller
             $pakets = Paket::all();
             $pelanggans = User::all();
             // return $datas;
-
             $pdf = PDF::loadview('superadmin.laporan_tagihan.print_bulanan',compact('datas','pelanggans','alats','pakets','th','bulan'));
 	        return $pdf->download('laporan-tagihan bulan '.$bulan.' tahun '.$th);
         }
@@ -237,7 +234,6 @@ class TagihanController extends Controller
            $a[] = date('Y', strtotime($tagih->tgl_tagihan));
             }
             $tahun = array_unique($a);
-            
             return view('superadmin.laporan_tagihan.index_tahun',compact('tahun'));
 
         }
