@@ -29,80 +29,104 @@
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
         <!-- ------------------------------------------------------------- -->
         <link href="{{ asset("assets/css/sidebars.css")}}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset("assets/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset("assets/vendor/fontawesome/css/all.min.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset("assets/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet" type="text/css" />
 
 		@yield('style')
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body>
-    <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div  class="navbar-brand">
-                        <a id="menu-toggle" href="#" class="glyphicon glyphicon-align-justify btn-menu toggle">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                        <a href="#">Project name</a>
+	<body class="body">
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top bg-white shadow-sm" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div  class="navbar-brand" style="height:70px; align-items:center; display:flex;">
+                            <a id="menu-toggle" href="#" class="my-auto glyphicon glyphicon-align-justify btn-menu text-primary toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a style="" href="#"><h4>Dashboard Admin</h4></a>
+                        </div>
+                    </div>
+                    <div class="cursor-pointer symbol symbol-10px symbol-md-20px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                        <img src="{{ asset("assets/media/logobiru1.png")}}" style="width: 115px; height: 35px;" alt="user" />
+                    </div>
+                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
+                        <div class="menu-item px-3">
+                            <div class="menu-content px-3">
+                                <div class="symbol mb-2 d-flex justify-content-center symbol-50px">
+                                    <img alt="Logo" style="width: 115px; height: 35px;" src="{{ asset("assets/media/logobiru1.png")}}" />
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="fw-bolder d-flex align-items-center fs-5">{{ Auth::user()->name }}
+                                    </div>
+                                    <a href="#" class="fw-bold text-muted fs-7">{{ Auth::user()->email }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separator my-2"></div>
+                        <div class="menu-item px-5 pb-3">
+                            <a href="{{ url("superadmin-profile", Auth::user()->id) }}" class="fw-bolder text-dark">Edit Profile</a>
+                        </div>
+                        <div class="menu-item px-5">
+                            <form action="{{ route("logout")}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger text-white menu-link px-5">Sign Out</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <script>
-                    .nav-link[data-toggle].collapsed:after {
-                        content: " ▾";
-                    }
-                    .nav-link[data-toggle]:not(.collapsed):after {
-                        content: " ▴";
-                    }
-                </script>
-            </div>
-        </nav>
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <nav id="spy">
-                <ul class="sidebar-nav nav">
-                    <li class="sidebar-brand">
-                        <a href="#home"><span class="fa fa-home solo">Home</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline">Reports</span></a>
-                        <div class="collapse" id="submenu1" aria-expanded="false">
-                            <ul class="flex-column pl-2 nav">
-                                <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
-                                <li class="nav-item">
-                                    <a class="nav-link  text-truncate collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
-                                    <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                        <ul class="flex-column nav pl-4">
-                                            <li class="nav-item">
-                                                <a class="nav-link p-1 text-truncate" href="#">
-                                                    <i class="fa fa-fw fa-clock-o"></i> Daily </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link p-1 text-truncate" href="#">
-                                                    <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link p-1 text-truncate" href="#">
-                                                    <i class="fa fa-fw fa-bar-chart"></i> Charts </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link p-1 text-truncate" href="#">
-                                                    <i class="fa fa-fw fa-compass"></i> Areas </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
             </nav>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper" class="bg-white  shadow-sm" style="margin-top:-52px;">
+                <nav id="spy">
+                    <ul class="sidebar-nav nav">
+                        <li class="sidebar-brand" style="height:75px; align-items:center; display:flex; margin-left: auto; margin-right: auto;">
+                            <a href="{{route('home')}}"><img alt="Logo" style="width: 115px; height: 45px; "
+                            src="{{ asset("assets/media/logobiru2.png")}}" /></a>
+                        </li>
+                        <li class="nav-item flex-column" style="width: 100%; justify-content: left; margin-top: 30px;">
+                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Data Master</a>
+                            <div class="collapse" id="submenu1" aria-expanded="false">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('client.index')}}"><span>Data Client</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('paket.index')}}"><span>Data Paket</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('alat.index')}}"><span>Data Alat</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('metode-pembayaran.index')}}"><span>Kelola Metode Pembayaran</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
+                            <a class="nav-link collapsed text-truncate" href="{{route('invoice.index')}}">Invoice Pembayaran</a>
+                        </li>
+                        <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
+                            <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3">Laporan Tagihan</a>
+                            <div class="collapse" id="submenu3" aria-expanded="false">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('cetak.index.bulan')}}"><span>Tagihan Bulanan</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('cetak.index.tahunan')}}"><span>Tagihan Tahunan</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="page-content-wrapper">
+                @yield('content')
+            </div>
         </div>
-        <!-- Page content -->
-        <div id="page-content-wrapper bg-white">
-            @yield('content')
-        </div>
-    </div>
         <!-- ========================= -->
 		<script>var hostUrl = "assets/";</script>
 		<script src="{{ asset("assets/plugins/global/plugins.bundle.js")}}"></script>
@@ -128,7 +152,14 @@
 			});
 			});
 		</script>
-
+        <script>
+                        .nav-link[data-toggle].collapsed:after {
+                            content: " ▾";
+                        }
+                        .nav-link[data-toggle]:not(.collapsed):after {
+                            content: " ▴";
+                        }
+                    </script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#example').DataTable( {
