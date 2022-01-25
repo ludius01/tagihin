@@ -4,11 +4,16 @@
 .shadow-sm{
     box-shadow: 3px 5px 4px #41484c;
 }
+.gelap{
+    color: #2c2ea8;
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+
 #wrapper {
     padding-left: 250px;
     transition: all 0.4s ease 0s;
   }
-
   #sidebar-wrapper {
     margin-left: -250px;
     top: 51px;
@@ -54,11 +59,13 @@
     display: block;
     text-decoration: none;
     margin: 5px;
+    font-size: 1rem;
     margin-left: 10px;
     border-radius: 4px;
   }
   .sidebar-nav li a span {
-      margin-left: 25px;
+      margin-left: 15px;
+      font-size: 1rem;
     /* text-indent: 10px; */
   }
 
@@ -69,6 +76,7 @@
     text-align: center;
     width: 20px;
     line-height: 18px;
+    font-size: 1rem;
   }
 
   .sidebar-nav li a:hover,
@@ -77,6 +85,7 @@
     background: #ddddf5;
     text-decoration: none;
     margin: 5px;
+    font-size: 1rem;
     border-radius: 4px;
     margin-left: 10px;
   }
@@ -86,6 +95,7 @@
     text-decoration: none;
     color: #2c2ea8;
     background: #ddddf5;
+    font-size: 1rem;
   }
 
   .sidebar-nav > .sidebar-brand {

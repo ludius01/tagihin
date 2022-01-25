@@ -86,36 +86,36 @@
                             src="{{ asset("assets/media/logobiru2.png")}}" /></a>
                         </li>
                         <li class="nav-item flex-column" style="width: 100%; justify-content: left; margin-top: 30px;">
-                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Data Master</a>
+                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"> <i class="fas fa-fw fa-table gelap"></i> Data Master</a>
                             <div class="collapse" id="submenu1" aria-expanded="false">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('client.index')}}"><span>Data Client</span></a>
+                                        <a class="nav-link py-1 active" href="{{route('client.index')}}"><span> <i class="fas fa-fw fa-user gelap"></i>Data Client</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('paket.index')}}"><span>Data Paket</span></a>
+                                        <a class="nav-link py-1" href="{{route('paket.index')}}"><span> <i class="fas fa-fw fa-cubes gelap"></i>Data Paket</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('alat.index')}}"><span>Data Alat</span></a>
+                                        <a class="nav-link py-1" href="{{route('alat.index')}}"><span><i class="fas fa-fw fa-tools gelap"></i>Data Alat</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('metode-pembayaran.index')}}"><span>Kelola Metode Pembayaran</span></a>
+                                        <a class="nav-link py-1" href="{{route('metode-pembayaran.index')}}"><span><i class="fas fa-fw fa-wallet gelap"></i>Kelola Metode Pembayaran</span></a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
-                            <a class="nav-link collapsed text-truncate" href="{{route('invoice.index')}}">Invoice Pembayaran</a>
+                            <a class="nav-link collapsed text-truncate" href="{{route('invoice.index')}}"><i class="fas fa-fw fa-file-invoice gelap"></i>Invoice Pembayaran</a>
                         </li>
                         <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
-                            <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3">Laporan Tagihan</a>
+                            <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3"> <i class="fas fa-fw fa-clipboard-list gelap"></i> Laporan Tagihan</a>
                             <div class="collapse" id="submenu3" aria-expanded="false">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('cetak.index.bulan')}}"><span>Tagihan Bulanan</span></a>
+                                        <a class="nav-link py-1" href="{{route('cetak.index.bulan')}}"><span><i class="fas fa-fw fa-file-alt gelap"></i>Tagihan Bulanan</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link py-1" href="{{route('cetak.index.tahunan')}}"><span>Tagihan Tahunan</span></a>
+                                        <a class="nav-link py-1" href="{{route('cetak.index.tahunan')}}"><span><i class="fas fa-fw fa-file-alt gelap"></i>Tagihan Tahunan</span></a>
                                     </li>
                                 </ul>
                             </div>
