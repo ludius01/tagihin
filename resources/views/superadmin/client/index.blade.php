@@ -66,12 +66,16 @@
                                     <!-- <td class=" text-center">*****************</td> -->
                                     <td class=" text-center">{{$user->No_Hp}}</td>
                                     {{-- <td class=" text-center"></td> --}}
-                                    
                                     <td class="text-center">
+                                         <button class="btn btn-primary btn-active-light-primary p-3" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$user->id}}"> <i class="far fa-fw fa-eye"></i></button>
+                                        <a href="{{route('client.edit',$user->id)}}" class="btn btn-info btn-active-light-info p-3"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="{{route('client.delete',$user->id)}}" id="delete-confirm" class="btn btn-danger btn-active-light-danger p-3"><i class="fas fa-fw fa-trash-alt"></i></a>
+                                    </td>
+                                    <!-- <td class="text-center">
                                          <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$user->id}}">Detail</button>
                                         <a href="{{route('client.edit',$user->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('client.delete',$user->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                              @endforeach
 

@@ -23,7 +23,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputState">Pilih Bulan</label>
                             <select id="inputState" class="form-control" name="bulan" >
-                            <option selected>Choose...</option>
+                            <option selected>Pilih Bulan...</option>
                             <option value="1">Januari</option>
                             <option value="2">Februari</option>
                             <option value="3">Maret</option>
@@ -41,7 +41,7 @@
                         <div class="form-group col-md-6">
                             <label for="inputState">Pilih Tahun</label>
                             <select id="inputState" class="form-control" name="tahun">
-                            <option selected>Choose...</option>
+                            <option selected>pilih Tahun...</option>
                             @foreach($tahun as $y)
                             <option value="{{$y}}">{{$y}}</option>
                             @endforeach
@@ -95,14 +95,14 @@
                         <table class="table table-row-bordered align-middle gy-4 gs-9">
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
-                                    <td class="min-w-300px text-center">Tanggal Tagihan</td>
-                                    <td class="min-w-20px text-center">No invoice</td>
+                                    <td class="min-w-200px text-center">Tanggal Tagihan</td>
+                                    <td class="min-w-150px text-center">No invoice</td>
                                     <td class="min-w-200px text-center">Pelanggan</td>
                                     <td class="min-w-100px text-center">Alat</td>
                                     <td class="min-w-150px text-center">Paket</td>
                                     <td class="min-w-100px text-center">Jumlah Tagihan</td>
                                     <td class="min-w-100px text-center">Kode Unik</td>
-                                    <td class="min-w-100px text-center">Status</td>
+                                    <td class="min-w-200px text-center">Status</td>
                                 </tr>
                             </thead>
                             <tbody class="fw-bold text-gray-600" id="myTable">

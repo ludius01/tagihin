@@ -66,10 +66,16 @@
                                     <td class=" text-center">@if($paket->tipe_paket == 1)Harian @elseif($paket->tipe_paket == 2) Mingguan @elseif($paket->tipe_paket == 3) Bulanan @endif</td>
                                     <td class=" text-center">@if($paket->status == 1) Aktif @elseif($paket->status == 2) Tidak Aktif @endif</td>
                                     <td class="text-center">
+                                         <button class="btn btn-primary btn-active-light-primary p-3" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$paket->id}}"> <i class="far fa-fw fa-eye"></i></button>
+                                        <a href="{{route('paket.edit',$paket->id)}}" class="btn btn-info btn-active-light-info  p-3"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="{{route('paket.delete',$paket->id)}}" id="delete-confirm" class="btn btn-danger btn-active-light-danger  p-3"><i class="fas fa-fw fa-trash-alt"></i></a>
+                                    </td>
+                                    
+                                    <!-- <td class="text-center">
                                          <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$paket->id}}">Detail</button>
                                         <a href="{{route('paket.edit',$paket->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('paket.delete',$paket->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                              @endforeach
 

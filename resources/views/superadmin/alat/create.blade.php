@@ -18,7 +18,7 @@
             <div class="card-header border-0">
                 <!--begin::Card title-->
                 <div class="card-title m-0">
-                    <h3 class="fw-bolder m-0">Tambah Client</h3>
+                    <h3 class="fw-bolder m-0">Tambah Alat</h3>
                 </div>
                 <!--end::Card title-->
             </div>

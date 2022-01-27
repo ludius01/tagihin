@@ -17,14 +17,14 @@
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
-				<th>Tanggal Tagihan</th>
-				<th>No Invoice</th>
-				<th>Pelanggan</th>
-				<th>Alat</th>
-				<th>Paket</th>
-				<th>Junlah Tagihan</th>
-                <th>Kode Unik</th>
-                <th>Status</th>
+				<td class="min-w-200px text-center">Tanggal Tagihan</td>
+                                    <td class="min-w-150px text-center">No invoice</td>
+                                    <td class="min-w-200px text-center">Pelanggan</td>
+                                    <td class="min-w-100px text-center">Alat</td>
+                                    <td class="min-w-150px text-center">Paket</td>
+                                    <td class="min-w-100px text-center">Jumlah Tagihan</td>
+                                    <td class="min-w-100px text-center">Kode Unik</td>
+                                    <td class="min-w-200px text-center">Status</td>
 			</tr>
 		</thead>
 		<tbody>

@@ -53,7 +53,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
-								<h1 class="text-dark mb-3">Sign In to Tagihin</h1>
+								<h1 class="text-dark mb-3">Masuk Ke Tagihin</h1>
 								<!--end::Title-->
 								<!--begin::Link-->
 								<!--end::Link-->

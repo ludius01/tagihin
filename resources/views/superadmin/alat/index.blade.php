@@ -62,10 +62,15 @@
                                     <td class=" text-center">{{$alat->nama_alat}}</td>
                                     <td class=" text-center">{{$alat->deskripsi}}</td>
                                     <td class="text-center">
+                                         <!-- <button class="btn btn-primary btn-active-light-primary p-3" data-bs-toggle="modal" data-bs-target="#"> <i class="far fa-fw fa-eye"></i></button> -->
+                                        <a href="{{route('alat.edit',$alat->id)}}" class="btn btn-info btn-active-light-info p-3"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="{{route('alat.delete',$alat->id)}}" id="delete-confirm" class="btn btn-danger btn-active-light-danger p-3"><i class="fas fa-fw fa-trash-alt"></i></a>
+                                    </td>
+                                    <!-- <td class="text-center">
                                         {{-- <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$tagihan->id}}">Detail</button> --}}
                                         <a href="{{route('alat.edit',$alat->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('alat.delete',$alat->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                              @endforeach
 

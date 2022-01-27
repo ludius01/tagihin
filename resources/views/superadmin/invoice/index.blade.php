@@ -63,12 +63,17 @@
                                     <td class=" text-center">{{$tagihan->users->username}}</td>
                                     <td class=" text-center">{{$tagihan->jumlah_bayar}}</td>
                                     <td class=" text-center">@if($tagihan->status == 1) sudah bayar @elseif ($tagihan->status == 2) belum bayar @endif</td>
-                                   
-                                    <td class="text-center">
+                                   <td class="text-center">
+                                         <button class="btn btn-primary btn-active-light-primary p-3" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$tagihan->id}}"> <i class="far fa-fw fa-eye"></i></button>
+                                        <a href="{{route('invoice.edit',$tagihan->id)}}" class="btn btn-info btn-active-light-info p-3"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="{{route('invoice.delete',$tagihan->id)}}" id="delete-confirm" class="btn btn-danger btn-active-light-danger p-3"><i class="fas fa-fw fa-trash-alt"></i></a>
+                                    </td>
+
+                                    <!-- <td class="text-center">
                                         <button class="btn btn-sm btn-primary btn-active-light-primary mx-2" data-bs-toggle="modal" data-bs-target="#kt_modal_1{{$tagihan->id}}">Detail</button>
                                         <a href="{{route('invoice.edit',$tagihan->id)}}" class="btn btn-sm btn-info btn-active-light-info mx-2">Edit</a>
                                         <a href="{{route('invoice.delete',$tagihan->id)}}" id="delete-confirm" class="btn btn-sm btn-danger btn-active-light-danger mx-2">Hapus</a>
-                                    </td>
+                                    </td> -->
                                 </tr>
                              @endforeach
 

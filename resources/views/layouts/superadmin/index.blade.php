@@ -71,7 +71,7 @@
                         <div class="menu-item px-5">
                             <form action="{{ route("logout")}}" method="post">
                                 @csrf
-                                <button type="submit" class="btn btn-danger text-white menu-link px-5">Sign Out</button>
+                                <button type="submit" class="btn btn-danger text-white menu-link px-5">Keluar</button>
                             </form>
                         </div>
                     </div>
