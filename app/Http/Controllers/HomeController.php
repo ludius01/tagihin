@@ -57,8 +57,12 @@ class HomeController extends Controller
        
 
             $profil= User::find(Auth::user()->id);
-
+            $profil->username = $request->username;
+            $profil->alamat = $request->alamat;
+            $profil->No_Hp = $request->No_Hp; 
+            if($request->password != null){
             $profil->password = Hash::make($request->password);
+            }
             $profil->save();
 
         return view("superadmin.profile.show",compact('profil'))->with("msg", "Berhasil Di Ubah");

@@ -48,15 +48,15 @@
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">No HP</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" value="{{ $user->username}}" required/>  
-                                {{--<label class="col-lg-4 col-form-label required fw-bold fs-6">{{ $user->username}}</label>--}}
+                                <input type="number" name="No_Hp" class="form-control form-control-lg form-control-solid" value="{{ $user->No_Hp}}" required/>  
+                                {{--<label class="col-lg-4 col-form-label required fw-bold fs-6">{{ $user->No_Hp}}</label>--}}
                             </div>
                         </div>
 
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-bold fs-6">Alamat</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" value="{{ $user->username}}" required/>  
+                                <input type="text" name="alamat" class="form-control form-control-lg form-control-solid" value="{{ $user->alamat}}" required/>  
                                 {{--<label class="col-lg-4 col-form-label required fw-bold fs-6">]</label>--}}
                             </div>
                         </div>
@@ -65,8 +65,8 @@
                         <div class="row mb-6">
                             <label id="password" class="col-lg-4 col-form-label required fw-bold fs-6">Password</label>
                             <div class="col-lg-8 fv-row">
-                                <input type="password" name="password" class="form-control form-control-lg form-control-solid" placeholder="Password" required/>
-                            </div>
+                                <input type="password" name="password" class="form-control form-control-lg form-control-solid"/>
+                                            </div>
                         </div>
                        
                        

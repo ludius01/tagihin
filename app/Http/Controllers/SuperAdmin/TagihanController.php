@@ -225,7 +225,7 @@ class TagihanController extends Controller
             $pelanggans = User::all();
             // return $datas;
             $pdf = PDF::loadview('superadmin.laporan_tagihan.print_bulanan',compact('datas','pelanggans','alats','pakets','th','bulan'));
-	        return $pdf->download('laporan-tagihan bulan '.$bulan.' tahun '.$th);
+	        return $pdf->download('laporan-tagihan bulan '.$bulan.' tahun '.$th.'.pdf');
         }
 
         public function index_tahunan(){
@@ -266,7 +266,7 @@ class TagihanController extends Controller
             // return $datas;
 
             $pdf = PDF::loadview('superadmin.laporan_tagihan.print_tahunan',compact('datas','pelanggans','alats','pakets','th'));
-	        return $pdf->download('laporan-tagihan tahun '.$th);
+	        return $pdf->download('laporan-tagihan tahun '.$th.'.pdf');
         }
 
 }

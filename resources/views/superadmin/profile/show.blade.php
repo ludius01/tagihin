@@ -87,6 +87,20 @@
                         <span class="fw-bolder fs-6 text-gray-800">{{ $profil->email}}</span>
                     </div>
                 </div>
+                
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">No HP</label>
+                    <div class="col-lg-8">
+                        <span class="fw-bolder fs-6 text-gray-800">{{ $profil->No_Hp}}</span>
+                    </div>
+                </div>
+
+                <div class="row mb-7">
+                    <label class="col-lg-4 fw-bold text-muted">Alamat</label>
+                    <div class="col-lg-8">
+                        <span class="fw-bolder fs-6 text-gray-800">{{ $profil->alamat}}</span>
+                    </div>
+                </div>
 
                 <div class="row mb-7">
                     <label class="col-lg-4 fw-bold text-muted">Password</label>
