@@ -15,11 +15,12 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $pagination = 10;
         // return Auth::user()->id;
-        $users = User::where('up_liner_id',Auth::user()->id)->get();
-        return view('superadmin.client.index',compact('users'));
+        $users = User::where('up_liner_id',Auth::user()->id)->paginate(10);
+        return view('superadmin.client.index',compact('users'))->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**

@@ -60,7 +60,7 @@
                      
                                 @foreach($pakets as $paket)
                                 <tr>
-                                    <td class=" text-center">{{$loop->iteration}}</td>
+                                    <td class=" text-center">{{++$i}}</td>
                                     <td class=" text-center">{{$paket->kode_paket}}</td>
                                     <td class=" text-center">{{$paket->nama_paket}}</td>
                                     <td class=" text-center">@if($paket->tipe_paket == 1)Harian @elseif($paket->tipe_paket == 2) Mingguan @elseif($paket->tipe_paket == 3) Bulanan @endif</td>
@@ -83,6 +83,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="py-5">
+                    <!--begin::Pages-->
+                    <ul class="pagination float-right">
+                        {{ $pakets->links() }}
+                    </ul>
+                    <!--end::Pages-->
+                </div>
                     {{--  end: Container  --}}
                 </div>
             </div>

@@ -111,6 +111,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="py-5">
+                    <!--begin::Pages-->
+                    <ul class="pagination float-right">
+                        {{ $datas->links() }}
+                    </ul>
+                    <!--end::Pages-->
+                </div>
                     {{--  end: Container  --}}
                 </div>
             </div>

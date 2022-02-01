@@ -34,6 +34,12 @@ Route::group(["middleware" => ['auth','check-permission']], function(){
     Route::get('/delete-invoice/{id}',['as'=>'invoice.delete', 'uses' => 'SuperAdmin\TagihanController@destroy']);
     Route::get('invoice/{id}/konfirmasi','SuperAdmin\TagihanController@konfirmasi')->name('invoice_konfirmasi');
 
+    Route::resource('invoice','SuperAdmin\TagihanController');
+    Route::get('invoice2','Superadmin\TagihanController@index2')->name('invoice.index2');
+    Route::get('/delete-invoice/{id}',['as'=>'invoice.delete', 'uses' => 'SuperAdmin\TagihanController@destroy']);
+    Route::get('invoice/{id}/konfirmasi','SuperAdmin\TagihanController@konfirmasi')->name('invoice_konfirmasi');
+
+
     Route::get('laporan-tagihan-bulanan','SuperAdmin\TagihanController@index_bulanan')->name('cetak.index.bulan');
     Route::POST('pilih-cetak-bulanan','SuperAdmin\TagihanController@pilih_bulanan')->name('pilih_cetak_bulanan');
     Route::get('print/{bulan}/bulan/{th}','SuperAdmin\TagihanController@print')->name('print');

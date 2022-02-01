@@ -9,7 +9,7 @@
     <!--begin::Container-->
     <div class="container-xxl" id="kt_content_container">
         <div class="mb-5">
-            <a class="btn btn-primary" href="{{route('invoice.create')}}">Tambah Invoice</a>
+           @if($status == 2) <a class="btn btn-primary" href="{{route('invoice.create')}}">Tambah Invoice</a> @elseif($status == 1) @endif
         </div>
         <div class="card">
             {{--  begin: Card -Header  --}}
@@ -81,6 +81,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="py-5">
+                    <!--begin::Pages-->
+                    <ul class="pagination float-right">
+                        {{ $tagihans->links() }}
+                    </ul>
+                    <!--end::Pages-->
+                </div>
                     {{--  end: Container  --}}
                 </div>
             </div>

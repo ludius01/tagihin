@@ -14,10 +14,11 @@ class MetodePembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $metods = Metode_pembayaran::where('id_admin',Auth::user()->id)->get();
-         return view('superadmin.metode_pembayaran.index',compact('metods'));
+        $pagination = 10;
+        $metods = Metode_pembayaran::where('id_admin',Auth::user()->id)->paginate(10);
+         return view('superadmin.metode_pembayaran.index',compact('metods'))->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**

@@ -104,8 +104,19 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
-                            <a class="nav-link collapsed text-truncate" href="{{route('invoice.index')}}"><i class="fas fa-fw fa-file-invoice gelap"></i>Invoice Pembayaran</a>
+
+                         <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
+                            <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3"> <i class="fas fa-fw fa-file-invoice gelap"></i> Invoice pembayaran</a>
+                            <div class="collapse" id="submenu3" aria-expanded="false">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('invoice.index')}}"><span><i class="fas fa-fw fa-file-alt gelap"></i>Belum Bayar</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-1" href="{{route('invoice.index2')}}"><span><i class="fas fa-fw fa-file-alt gelap"></i>Sudah Bayar</span></a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
                             <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3"> <i class="fas fa-fw fa-clipboard-list gelap"></i> Laporan Tagihan</a>

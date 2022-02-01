@@ -60,7 +60,7 @@
                      
                                 @foreach($users as $user)
                                 <tr>
-                                    <td class=" text-center">{{$loop->iteration}}</td>
+                                    <td class=" text-center">{{++$i}}</td>
                                     <td class=" text-center">{{$user->username}}</td>
                                     <td class=" text-center">{{$user->email}}</td>
                                     <!-- <td class=" text-center">*****************</td> -->
@@ -83,6 +83,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="py-5">
+                    <!--begin::Pages-->
+                    <ul class="pagination float-right">
+                        {{ $users->links() }}
+                    </ul>
+                    <!--end::Pages-->
+                </div>
                     {{--  end: Container  --}}
                 </div>
             </div>

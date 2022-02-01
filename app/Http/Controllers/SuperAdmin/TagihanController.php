@@ -22,10 +22,20 @@ class TagihanController extends Controller
    
          public function index()
     {            
-        $tagihans = Tagihan::with('users')->where('id_admin',Auth::user()->id)->get();
+        $tagihans = Tagihan::with('users')->where('id_admin',Auth::user()->id)->where('status',2)->paginate(10);
         $pembayarans = Pembayaran::with('tagihan')->where('id_admin',Auth::user()->id)->get();
+        $status = '2';
         // return $pembayarans;
-        return view('superadmin.invoice.index',compact('tagihans','pembayarans'));
+        return view('superadmin.invoice.index',compact('tagihans','pembayarans','status'));
+    }
+
+     public function index2()
+    {            
+        $tagihans = Tagihan::with('users')->where('id_admin',Auth::user()->id)->where('status',1)->paginate(10);
+        $pembayarans = Pembayaran::with('tagihan')->where('id_admin',Auth::user()->id)->get();
+        $status = '1';
+        // return $pembayarans;
+        return view('superadmin.invoice.index',compact('tagihans','pembayarans','status'));
     }
     
 
@@ -127,8 +137,13 @@ class TagihanController extends Controller
             'jumlah_bayar' => $bayar,
             'status' => $request->status,
         ]);
-
+        if($request->status == 1){
+            return redirect('invoice2');
+        }
+        elseif($request->status == 2){
         return redirect('invoice');
+        }
+        
     }
 
     /**
@@ -141,7 +156,13 @@ class TagihanController extends Controller
     {
          $Tagihan = Tagihan::find($id);
         Tagihan::destroy($Tagihan->id);
+         if($Tagihan == 1){
+            return redirect('invoice2');
+        }
+        elseif($Tagihan == 2){
         return redirect('invoice');
+        }
+      
     }
 
     public function konfirmasi($id){
@@ -208,7 +229,7 @@ class TagihanController extends Controller
             $pelanggans = User::all();
             $datas = Tagihan::whereYear('tgl_tagihan',$request->tahun)
             ->whereMonth('tgl_tagihan',$request->bulan)
-            ->where('id_admin',Auth::user()->id)->get();
+            ->where('id_admin',Auth::user()->id)->paginate(1);
            $bulan = $request->bulan;
            $th = $request->tahun;
             
@@ -250,7 +271,7 @@ class TagihanController extends Controller
             $pakets = Paket::all();
             $pelanggans = User::all();
             $datas = Tagihan::whereYear('tgl_tagihan',$request->tahun)
-            ->where('id_admin',Auth::user()->id)->get();
+            ->where('id_admin',Auth::user()->id)->paginate(1);
            $th = $request->tahun;
             
             return view('superadmin.laporan_tagihan.index_tahun',compact('tahun','datas','th','pelanggans','alats','pakets'));

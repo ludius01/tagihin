@@ -44,7 +44,7 @@
                     
                     <div class="table-responsive">
                         
-                        <table class="table table-row-bordered align-middle gy-4 gs-9">
+                        <table class="table table-row-bordered align-middle gy-4 gs-9" id="kt_customers_table">
                             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bolder bg-light bg-opacity-75">
                                 <tr>
                                     <td class="min-w-20px text-center">No</td>
@@ -57,8 +57,9 @@
                                 {{--  begin: Row  --}}
                      
                                 @foreach($alats as $alat)
+
                                 <tr>
-                                    <td class=" text-center">{{$loop->iteration}}</td>
+                                    <td class=" text-center">{{ ++$i }}</td>
                                     <td class=" text-center">{{$alat->nama_alat}}</td>
                                     <td class=" text-center">{{$alat->deskripsi}}</td>
                                     <td class="text-center">
@@ -78,6 +79,13 @@
                             </tbody>
                         </table>
                     </div>
+                     <div class="py-5">
+                    <!--begin::Pages-->
+                    <ul class="pagination float-right">
+                        {{ $alats->links() }}
+                    </ul>
+                    <!--end::Pages-->
+                </div>
                     {{--  end: Container  --}}
                 </div>
             </div>

@@ -14,10 +14,12 @@ class AlatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $alats = Alat::where('id_admin',Auth::user()->id)->get();
-        return view('superadmin.alat.index',compact('alats'));
+        $pagination = 10;
+        $alats = Alat::where('id_admin',Auth::user()->id)->paginate(10);
+        
+        return view('superadmin.alat.index',compact('alats'))->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**

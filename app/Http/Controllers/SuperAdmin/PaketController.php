@@ -14,10 +14,11 @@ class PaketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $pakets = Paket::where('id_admin',Auth::user()->id)->get();
-        return view('superadmin.paket.index',compact('pakets'));
+        $pagination = 1;
+        $pakets = Paket::where('id_admin',Auth::user()->id)->paginate(1);
+        return view('superadmin.paket.index',compact('pakets'))->with('i', ($request->input('page', 1) - 1) * $pagination);
     }
 
     /**
