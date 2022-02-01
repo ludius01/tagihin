@@ -78,7 +78,7 @@
                 </div>
             </nav>
             <!-- Sidebar -->
-            <div id="sidebar-wrapper" class="bg-white  shadow-sm" style="margin-top:-52px;">
+            <div id="sidebar-wrapper" class="bg-white shadow-sm" style="margin-top:-52px;">
                 <nav id="spy">
                     <ul class="sidebar-nav nav">
                         <li class="sidebar-brand" style="height:75px; align-items:center; display:flex; margin-left: auto; margin-right: auto;">
@@ -86,11 +86,11 @@
                             src="{{ asset("assets/media/logobiru2.png")}}" /></a>
                         </li>
                         <li class="nav-item flex-column" style="width: 100%; justify-content: left; margin-top: 30px;">
-                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"> <i class="fas fa-fw fa-table gelap"></i> Data Master</a>
+                            <a class="active nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"> <i class="fas fa-fw fa-table gelap"></i> Data Master</a>
                             <div class="collapse" id="submenu1" aria-expanded="false">
                                 <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link py-1 active" href="{{route('client.index')}}"><span> <i class="fas fa-fw fa-user gelap"></i>Data Client</span></a>
+                                    <li class="nav-item active">
+                                        <a class="nav-link py-1 " href="{{route('client.index')}}"><span> <i class="fas fa-fw fa-user gelap"></i>Data Client</span></a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link py-1" href="{{route('paket.index')}}"><span> <i class="fas fa-fw fa-cubes gelap"></i>Data Paket</span></a>
@@ -106,8 +106,8 @@
                         </li>
 
                          <li class="nav-item flex-column" style="width: 100%; justify-content: left;">
-                            <a class="nav-link collapsed text-truncate" href="#submenu3" data-toggle="collapse" data-target="#submenu3"> <i class="fas fa-fw fa-file-invoice gelap"></i> Invoice pembayaran</a>
-                            <div class="collapse" id="submenu3" aria-expanded="false">
+                            <a class="nav-link collapsed text-truncate" href="#submenu2" data-toggle="collapse" data-target="#submenu2"> <i class="fas fa-fw fa-file-invoice gelap"></i> Invoice pembayaran</a>
+                            <div class="collapse" id="submenu2" aria-expanded="false">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link py-1" href="{{route('invoice.index')}}"><span><i class="fas fa-fw fa-file-alt gelap"></i>Belum Bayar</span></a>
