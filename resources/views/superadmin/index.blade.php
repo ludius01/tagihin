@@ -23,7 +23,7 @@
                     <!--begin::Chart-->
                     <div class="row">
                         <div class="col-12 col-lg-9 ">
-                            <canvas id="tk-line"></canvas>
+                            <canvas style="overflow-x:visible;" id="tk-line" ></canvas>
                         </div>
                         <div class="mt-5 col-12 col-lg-2">
                             <!--begin::Item-->
